@@ -7,9 +7,9 @@ function App() {
   return (
     <>
       <div className="card">
-        <button onClick={() => count.value += 1}>
+        {/* <button onClick={() => count.value += 1}>
           count is {count}
-        </button>
+        </button> */}
         <LogoLoader/>
       </div>
     </>
