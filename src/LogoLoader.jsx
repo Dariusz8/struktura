@@ -18,10 +18,21 @@ const LogoLoader = () => {
   const myImage3 = cld.image('STRUKTURA3');
   const myImage4 = cld.image('STRUKTURA4');
   
-  myImage1.resize(scale().width(200).height(200));
-  myImage2.resize(scale().width(200).height(200));
-  myImage3.resize(scale().width(200).height(200));
-  myImage4.resize(scale().width(800).height(200));
+  myImage1.resize(scale()
+    .width(200)
+    .height(200));
+
+  myImage2.resize(scale()
+  .width(200)
+  .height(200));
+
+  myImage3.resize(scale()
+  .width(200)
+  .height(200));
+
+  myImage4.resize(scale()
+  .width(800)
+  .height(200));
 
   useEffect(() => {
     const delay = 1000;
