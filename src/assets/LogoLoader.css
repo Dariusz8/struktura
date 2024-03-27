@@ -1,19 +1,28 @@
 .logoParent {
     display: grid;
-    grid-template-columns: repeat(3, 33.3%);
-    grid-template-rows: repeat(2, 50%);
+    grid-template-areas:
+    "p1 p2 p3"
+    "name name name";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
-    
-body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 90vw;
+    max-height: 90vh;
     }
 
-p {
-    margin: auto;
+.p1 {
+    grid-area: p1;
+}
+
+.p2 {
+    grid-area: p2;
+}
+
+.p3 {
+    grid-area: p3;
+}
+
+.logoName {
+    grid-area: name;
 }

@@ -18,21 +18,13 @@ const LogoLoader = () => {
   const myImage3 = cld.image('STRUKTURA3');
   const myImage4 = cld.image('STRUKTURA4');
   
-  myImage1.resize(scale()
-    .width(200)
-    .height(200));
+  myImage1.format('auto');
 
-  myImage2.resize(scale()
-  .width(200)
-  .height(200));
+  myImage2.format('auto');
 
-  myImage3.resize(scale()
-  .width(200)
-  .height(200));
+  myImage3.format('auto');
 
-  myImage4.resize(scale()
-  .width(800)
-  .height(200));
+  myImage4.format('auto');
 
   useEffect(() => {
     const delay = 1000;
@@ -48,16 +40,16 @@ const LogoLoader = () => {
 
     return (
       <div className='logoParent'>
-        <p style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s' }}>
+        <p className='p1' style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s' }}>
         <AdvancedImage cldImg={myImage1} />
         </p>
-        <p style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 1s' }}>
+        <p className='p2' style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 1s' }}>
           <AdvancedImage cldImg={myImage2} />
         </p>
-        <p style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 2s' }}>
+        <p className='p3' style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 2s' }}>
           <AdvancedImage cldImg={myImage3} />
         </p>
-        <p style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 3s' }}>
+        <p className='logoName' style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 3s' }}>
           <AdvancedImage cldImg={myImage4} />
         </p>
       </div>

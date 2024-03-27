@@ -6,7 +6,7 @@ function App() {
   const count = signal(0);
   return (
     <>
-      <div className="card">
+      <div>
         {/* <button onClick={() => count.value += 1}>
           count is {count}
         </button> */}
