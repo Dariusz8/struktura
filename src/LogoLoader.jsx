@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './assets/LogoLoader.css';
 import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage} from '@cloudinary/react';
-import {scale} from "@cloudinary/url-gen/actions/resize";
+import {limitFill, scale} from "@cloudinary/url-gen/actions/resize";
 
 const LogoLoader = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,13 +18,21 @@ const LogoLoader = () => {
   const myImage3 = cld.image('STRUKTURA3');
   const myImage4 = cld.image('STRUKTURA4');
   
-  myImage1.format('auto');
+  myImage1.format('auto')
+    .quality('auto')
+    .resize(scale().width("1.0").regionRelative());
 
-  myImage2.format('auto');
+  myImage2.format('auto')
+    .quality('auto')
+    .resize(scale().width("1.0").regionRelative());
 
-  myImage3.format('auto');
+  myImage3.format('auto')
+    .quality('auto')
+    .resize(scale().width("1.0").regionRelative());
 
-  myImage4.format('auto');
+  myImage4.format('auto')
+    .quality('auto')
+    .resize(scale().width(0.88).regionRelative());
 
   useEffect(() => {
     const delay = 1000;

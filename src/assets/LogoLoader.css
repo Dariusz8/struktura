@@ -5,24 +5,29 @@
     "name name name";
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 4vw;
+    grid-row-gap: 0;
     max-width: 90vw;
     max-height: 90vh;
+    box-sizing:border-box;
     }
 
 .p1 {
     grid-area: p1;
+    max-width: 33vw;
 }
 
 .p2 {
     grid-area: p2;
+    max-width: 33vw;
 }
 
 .p3 {
     grid-area: p3;
+    max-width: 33vw;
 }
 
 .logoName {
     grid-area: name;
+    max-width: 90vw;
 }
