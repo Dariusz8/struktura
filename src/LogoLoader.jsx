@@ -35,15 +35,24 @@ const LogoLoader = () => {
     .resize(scale().width(0.88).regionRelative());
 
   useEffect(() => {
-    const delay = 1000;
+    const fadeInDelay = 1000;
+    const fadeOutDelay = 6000;
 
-  const showParagraphs = () => {
+  const showParagraphs= () => {
     setIsVisible(true);
     };
 
-  const timeout = setTimeout(showParagraphs, delay);
+    const hideParagraphs = () => {
+      setIsVisible(false);
+      };
 
-  return () => clearTimeout(timeout);
+    const fadeInTimeout = setTimeout(showParagraphs, fadeInDelay);
+    const fadeOutTimeout = setTimeout(hideParagraphs, fadeOutDelay);
+
+  return () => {
+    clearTimeout(fadeInTimeout);
+    clearTimeout(fadeOutTimeout);
+  }
   }, [])
 
     return (
