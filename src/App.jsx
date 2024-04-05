@@ -1,6 +1,7 @@
 import { signal } from '@preact/signals-react'
 import './App.css'
 import LogoLoader from './LogoLoader';
+import SideBar from './SideBar'; 
 
 function App() {
   const count = signal(0);
@@ -11,6 +12,7 @@ function App() {
           count is {count}
         </button> */}
         <LogoLoader/>
+        <SideBar/>
       </div>
     </>
   )
