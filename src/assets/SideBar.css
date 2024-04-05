@@ -1,0 +1,13 @@
+.sideBarBoxDaddy {
+    max-width: 20vw;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    left: 2vw;
+    top:2vh;
+}
+
+.sideBarLogo {
+    width: 15vh;
+    height: 15vh;
+}
