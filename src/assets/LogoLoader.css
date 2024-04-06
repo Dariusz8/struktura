@@ -10,12 +10,14 @@
     max-width: 90vw;
     max-height: 90vh;
     box-sizing:border-box;
+    margin-inline: auto;
     background-color: transparent;
     }
 
 .p1 {
     grid-area: p1;
     max-width: 33vw;
+    margin-inline: auto;
 }
 
 .p2 {

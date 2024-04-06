@@ -57,16 +57,16 @@ const LogoLoader = () => {
 
     return (
       <div className='logoParent'>
-        <p className='p1' style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s' }}>
+        <p className='p1' alt="First Part of Struktura Logo" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s' }}>
         <AdvancedImage cldImg={myImage1} />
         </p>
-        <p className='p2' style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 1s' }}>
+        <p className='p2' alt="Second Part of Struktura Logo" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 1s' }}>
           <AdvancedImage cldImg={myImage2} />
         </p>
-        <p className='p3' style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 2s' }}>
+        <p className='p3' alt="Third Part of Struktura Logo" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 2s' }}>
           <AdvancedImage cldImg={myImage3} />
         </p>
-        <p className='logoName' style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 3s' }}>
+        <p className='logoName' alt="Struktura in Company" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 3s' }}>
           <AdvancedImage cldImg={myImage4} />
         </p>
       </div>

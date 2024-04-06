@@ -1,13 +1,36 @@
 .sideBarBoxDaddy {
-    max-width: 20vw;
-    height: 100vh;
+    max-width: 15vw;
+    max-height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
     position: fixed;
-    left: 2vw;
-    top:2vh;
+    left: 10px;
+    top:1vh;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.kitchenIcon {
+    padding-top: 10vh;
+    font-size: 30px;
 }
 
 .sideBarLogo {
-    width: 15vh;
-    height: 15vh;
+    max-width: 10vh;
+    max-height: 10vh;
 }
+
+.tvIcon {
+    font-size: 30px;
+}
+
+.bedIcon {
+    font-size: 30px;
+}
+
+.toiletIcon {
+    font-size: 30px;
+}
+
