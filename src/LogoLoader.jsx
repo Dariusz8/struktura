@@ -20,19 +20,19 @@ const LogoLoader = () => {
   
   myImage1.format('auto')
     .quality('auto')
-    .resize(scale().width("1.0").regionRelative());
+    .resize(scale().width(0.7).regionRelative());
 
   myImage2.format('auto')
     .quality('auto')
-    .resize(scale().width("1.0").regionRelative());
+    .resize(scale().width(0.7).regionRelative());
 
   myImage3.format('auto')
     .quality('auto')
-    .resize(scale().width("1.0").regionRelative());
+    .resize(scale().width(0.7).regionRelative());
 
   myImage4.format('auto')
     .quality('auto')
-    .resize(scale().width(0.88).regionRelative());
+    .resize(scale().width(0.7).regionRelative());
 
   useEffect(() => {
     const fadeInDelay = 1000;

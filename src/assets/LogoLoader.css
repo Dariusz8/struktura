@@ -1,14 +1,15 @@
 .logoParent {
+    place-content: center;
+    width: fit-content;
+    height: fit-content;
     display: grid;
     grid-template-areas:
     "p1 p2 p3"
     "name name name";
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-column-gap: 4vw;
+    grid-column-gap: 3vw;
     grid-row-gap: 0;
-    max-width: 90vw;
-    max-height: 90vh;
     box-sizing:border-box;
     margin-inline: auto;
     background-color: transparent;
@@ -16,21 +17,16 @@
 
 .p1 {
     grid-area: p1;
-    max-width: 33vw;
-    margin-inline: auto;
 }
 
 .p2 {
     grid-area: p2;
-    max-width: 33vw;
 }
 
 .p3 {
     grid-area: p3;
-    max-width: 33vw;
 }
 
 .logoName {
     grid-area: name;
-    max-width: 90vw;
 }
