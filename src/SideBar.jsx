@@ -18,28 +18,41 @@ const SideBar = () => {
   });
 
   const logoImg = cld.image('STRUKTURA');
+  const sideBarMenu = cld.image('STRUKTURA1');
 
   logoImg.format('auto')
     .quality('auto')
     .resize(scale().width(0.10).regionRelative());
+
+  sideBarMenu.format('auto')
+    .quality('auto')
+    .resize(scale().width(0.065).regionRelative());
+    ;
 
     return (
         <div className='sideBarBoxDaddy'>
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
             </p>
-            <p className='kitchenIcon'>
-                <MdOutlineKitchen/>
+            <p className='sideBarMenuButton'>
+                <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </p>
-            <p className='toiletIcon'>
-                <PiToiletBold/>
-            </p>
-            <p className='bedIcon'>
-                <LiaBedSolid/>
-            </p>
-            <p className='tvIcon'>
-                <PiTelevisionSimpleBold/>
-            </p>
+            <button className='kitchenIcon sideBarOptions' title="Kitchen">
+                <MdOutlineKitchen />
+                <span>Kitchen</span>
+            </button>
+            <button className='toiletIcon sideBarOptions' title="Toilet">
+                <PiToiletBold />
+                <span>Toilet</span>
+            </button>
+            <button className='bedIcon sideBarOptions' title="Bed">
+                <LiaBedSolid />
+                <span>Bed</span>
+            </button>
+            <button className='tvIcon sideBarOptions' title="TV">
+                <PiTelevisionSimpleBold />
+                <span>TV</span>
+            </button>
         </div>
     )
 }
