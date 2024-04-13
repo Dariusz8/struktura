@@ -6,8 +6,7 @@ import { PiTelevisionSimpleBold } from "react-icons/pi";
 import { LiaBedSolid } from "react-icons/lia";
 import { PiToiletBold } from "react-icons/pi";
 import { MdOutlineKitchen } from "react-icons/md";
-
-
+import { signal } from "@preact/signals"; 
 
 const SideBar = () => {
     //create and configure to my cloudinary instance
@@ -16,10 +15,11 @@ const SideBar = () => {
       cloudName: 'dly85se71'
     }
   });
-
+  //cloudinary pictures being taken
   const logoImg = cld.image('STRUKTURA');
   const sideBarMenu = cld.image('STRUKTURA1');
 
+  //use cloudinary sdk to have image in ready format
   logoImg.format('auto')
     .quality('auto')
     .resize(scale().width(0.10).regionRelative());

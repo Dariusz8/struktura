@@ -36,6 +36,7 @@
 
 .sideBarOptions {
     background: transparent;
+    font-family:'Courier New', Courier, monospace;
     color:black;
     border: none;
     border-radius: 8%;
@@ -47,7 +48,7 @@
 }
 
 .sideBarOptions:hover {
-    background: rgba(0, 0, 0, 0.1); /* Adjust opacity as needed */
+    background: rgba(0, 0, 0, 0.6); /* Adjust opacity as needed */
 }
 
 .sideBarMenuButton {
