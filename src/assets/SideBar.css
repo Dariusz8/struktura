@@ -51,7 +51,15 @@
     background: rgba(0, 0, 0, 0.6); /* Adjust opacity as needed */
 }
 
-.sideBarMenuButton {
+.sideBarMenuButtonOn {
+    margin-top: 10vh;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.sideBarMenuButtonOff {
     margin-top: 10vh;
     background: transparent;
     border: none;
