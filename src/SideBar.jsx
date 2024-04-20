@@ -11,6 +11,10 @@ import { signal, useSignal, effect } from "@preact/signals-react";
 const SideBar = () => {
 
     const sideBarStatus = signal(false);
+
+    const menuClick = () => {
+        sideBarStatus.value = !sideBarStatus.value
+    }
 //create and configure to my cloudinary instance
     const cld = new Cloudinary({
         cloud: {
@@ -33,12 +37,12 @@ const SideBar = () => {
 
     return (
         <div>
-        {sideBarStatus && 
+        {sideBarStatus.value && 
         <div className='sideBarBoxDaddy'>
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
             </p>
-            <button className='sideBarMenuButtonOn'>
+            <button className='sideBarMenuButtonOn' onClick={menuClick}>
                 <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </button>
             <button className='kitchenIcon sideBarOptions' title="Kitchen">
@@ -59,12 +63,12 @@ const SideBar = () => {
             </button>
         </div>
         }
-        {!sideBarStatus &&
+        {!sideBarStatus.value &&
             <div className='sideBarBoxDaddy'>
                 <p className='sideBarLogo'>
                     <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
                 </p>
-            <button className='sideBarMenuButtonOff'>
+            <button className='sideBarMenuButtonOff' onClick={menuClick}>
                 <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </button>
             </div>
