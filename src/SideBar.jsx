@@ -13,8 +13,18 @@ const SideBar = () => {
     const sideBarStatus = signal(false);
 
     const menuClick = () => {
-        sideBarStatus.value = !sideBarStatus.value
+        sideBarStatus.value = !sideBarStatus.value;
+
+//localStorage.setItem('sideBarStatus', JSON.stringify(sideBarStatus.value));
     }
+
+//     const storedValue = localStorage.getItem('sideBarStatus');
+// if (storedValue !== null) {
+//     sideBarStatus.value = JSON.parse(storedValue);
+// }
+    //checking signal value
+    effect(() => console.log(sideBarStatus.value));
+
 //create and configure to my cloudinary instance
     const cld = new Cloudinary({
         cloud: {
@@ -33,11 +43,9 @@ const SideBar = () => {
     sideBarMenu.format('auto')
         .quality('auto')
         .resize(scale().width(0.065).regionRelative());
-    ;
 
-    return (
-        <div>
-        {sideBarStatus.value && 
+
+    const showingSideBarCode = (
         <div className='sideBarBoxDaddy'>
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
@@ -61,19 +69,25 @@ const SideBar = () => {
                 <PiTelevisionSimpleBold />
                 <span>TV</span>
             </button>
-        </div>
-        }
-        {!sideBarStatus.value &&
-            <div className='sideBarBoxDaddy'>
-                <p className='sideBarLogo'>
-                    <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
-                </p>
+        </div>)
+        
+    const hiddingSideBarCode = (
+        <div className='sideBarBoxDaddy'>
+            <p className='sideBarLogo'>
+                <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
+            </p>
             <button className='sideBarMenuButtonOff' onClick={menuClick}>
                 <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </button>
-            </div>
+        </div>
+        )
+
+    return (
+        <div>
+        {
+        sideBarStatus.value ? showingSideBarCode :hiddingSideBarCode
         }
-    </div>
+        </div>
     )
 }
 
