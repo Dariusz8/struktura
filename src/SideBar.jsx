@@ -14,7 +14,6 @@ const SideBar = () => {
 
     const menuClick = () => {
         sideBarStatus.value = !sideBarStatus.value;
-
 //localStorage.setItem('sideBarStatus', JSON.stringify(sideBarStatus.value));
     }
 
@@ -45,7 +44,7 @@ const SideBar = () => {
         .resize(scale().width(0.065).regionRelative());
 
 
-    const showingSideBarCode = (
+    const showingSideBarCode = (sideBarStatus.value &&
         <div className='sideBarBoxDaddy'>
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
@@ -71,7 +70,7 @@ const SideBar = () => {
             </button>
         </div>)
         
-    const hiddingSideBarCode = (
+    const hiddingSideBarCode = (!sideBarStatus.value &&
         <div className='sideBarBoxDaddy'>
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
@@ -85,7 +84,10 @@ const SideBar = () => {
     return (
         <div>
         {
-        sideBarStatus.value ? showingSideBarCode :hiddingSideBarCode
+            showingSideBarCode 
+        }
+        {
+            hiddingSideBarCode
         }
         </div>
     )
