@@ -44,7 +44,7 @@ const SideBar = () => {
         .resize(scale().width(0.065).regionRelative());
 
 
-    const showingSideBarCode = (sideBarStatus.value &&
+    const showingSideBarCode = (
         <div className='sideBarBoxDaddy'>
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
@@ -70,7 +70,7 @@ const SideBar = () => {
             </button>
         </div>)
         
-    const hiddingSideBarCode = (!sideBarStatus.value &&
+    const hiddingSideBarCode = (
         <div className='sideBarBoxDaddy'>
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
@@ -84,10 +84,7 @@ const SideBar = () => {
     return (
         <div>
         {
-            showingSideBarCode 
-        }
-        {
-            hiddingSideBarCode
+            sideBarStatus.value ? showingSideBarCode : hiddingSideBarCode
         }
         </div>
     )
