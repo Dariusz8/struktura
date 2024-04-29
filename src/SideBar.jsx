@@ -6,21 +6,23 @@ import { PiTelevisionSimpleBold } from "react-icons/pi";
 import { LiaBedSolid } from "react-icons/lia";
 import { PiToiletBold } from "react-icons/pi";
 import { MdOutlineKitchen } from "react-icons/md";
-import { signal, useSignal, effect } from "@preact/signals-react"; 
+import { signal, effect } from "@preact/signals-react";
+import { sideBarStatus } from './App';
 
 const SideBar = () => {
 
-    const sideBarStatus = signal(false);
+    //const sideBarStatus = signal(false);
 
     const menuClick = () => {
         sideBarStatus.value = !sideBarStatus.value;
-//localStorage.setItem('sideBarStatus', JSON.stringify(sideBarStatus.value));
+        localStorage.setItem('sideBarStatus', JSON.stringify(sideBarStatus.value));
+        window.location.reload();
     }
 
-//     const storedValue = localStorage.getItem('sideBarStatus');
-// if (storedValue !== null) {
-//     sideBarStatus.value = JSON.parse(storedValue);
-// }
+    const storedValue = localStorage.getItem('sideBarStatus');
+if (storedValue !== null) {
+    sideBarStatus.value = JSON.parse(storedValue);
+}
     //checking signal value
     effect(() => console.log(sideBarStatus.value));
 
@@ -44,7 +46,7 @@ const SideBar = () => {
         .resize(scale().width(0.065).regionRelative());
 
 
-    const showingSideBarCode = (
+    const showingPorfolioSideBar = (
         <div className='sideBarBoxDaddy'>
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
@@ -78,13 +80,32 @@ const SideBar = () => {
             <button className='sideBarMenuButtonOff' onClick={menuClick}>
                 <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </button>
+        </div>)
+
+    const showingHomeSideBar = (
+        <div className='sideBarBoxDaddy'>
+            <p className='sideBarLogo'>
+                <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
+            </p>
+            <button className='sideBarMenuButtonOn' onClick={menuClick}>
+                <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
+            </button>
+            <p className='sideBarOptions'>
+                About Us
+            </p>
+            <p className='sideBarOptions'>
+                Portfolio
+            </p>
+            <p className='sideBarOptions'>
+                Contact
+            </p>
         </div>
-        )
+    )
 
     return (
         <div>
         {
-            sideBarStatus.value ? showingSideBarCode : hiddingSideBarCode
+            sideBarStatus.value ? showingHomeSideBar : hiddingSideBarCode
         }
         </div>
     )

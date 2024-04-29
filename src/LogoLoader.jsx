@@ -4,6 +4,7 @@ import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage} from '@cloudinary/react';
 import {limitFill, scale} from "@cloudinary/url-gen/actions/resize";
 
+//use a seen signal from app so only show this once on first connect 
 const LogoLoader = () => {
   const [isVisible, setIsVisible] = useState(false);
   //create and configure to my cloudinary instance

@@ -4,8 +4,10 @@ import LogoLoader from './LogoLoader';
 import SideBar from './SideBar'; 
 import HomePage from './HomePage';
 
+export const sideBarStatus = signal(false);
+
 function App() {
-  const count = signal(0);
+  //const count = signal(0);
   return (
     <>
       <div>
