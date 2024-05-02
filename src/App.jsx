@@ -4,7 +4,9 @@ import LogoLoader from './LogoLoader';
 import SideBar from './SideBar'; 
 import HomePage from './HomePage';
 
-export const sideBarStatus = signal(false);
+//all signals values. put in sep file, resort to useState if cannot avoid refreshing to show updated FE
+// export const sideBarStatus = signal(false);
+// export const portfolioStatus = signal(false);
 
 function App() {
   //const count = signal(0);

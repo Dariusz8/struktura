@@ -6,25 +6,37 @@ import { PiTelevisionSimpleBold } from "react-icons/pi";
 import { LiaBedSolid } from "react-icons/lia";
 import { PiToiletBold } from "react-icons/pi";
 import { MdOutlineKitchen } from "react-icons/md";
-import { signal, effect } from "@preact/signals-react";
-import { sideBarStatus } from './App';
+//import { signal, effect } from "@preact/signals-react";
+//import { sideBarStatus, portfolioStatus } from './App';
+import React, {useState} from 'react';
 
 const SideBar = () => {
 
-    //const sideBarStatus = signal(false);
-
+    const [sideBarActive, setSideBarActive] = useState(false);
+    const [portfolioActive, setPortfolioActive] = useState(false);
+    const [aboutActive, setAboutActive] = useState(false);
+    const [contactActive, setContactActive] = useState(false);
+    
+    
     const menuClick = () => {
-        sideBarStatus.value = !sideBarStatus.value;
-        localStorage.setItem('sideBarStatus', JSON.stringify(sideBarStatus.value));
-        window.location.reload();
+        setPortfolioActive(false);
+        setAboutActive(false);
+        setContactActive(false);
+        setSideBarActive(!sideBarActive);
     }
 
-    const storedValue = localStorage.getItem('sideBarStatus');
-if (storedValue !== null) {
-    sideBarStatus.value = JSON.parse(storedValue);
-}
+//when was trying to use signals for state
+    // const portfolioClick = () => {
+    //     portfolioStatus.value = !portfolioStatus.value;
+    //     localStorage.setItem('portfolioStatus', JSON.stringify(portfolioStatus.value))
+    //     window.location.reload();
+    // }
+    //     const storedPortfolioValue = localStorage.getItem('portfolioStatus');
+    //         if (storedMenuValue !== null) {
+    //         portfolioStatus.value = JSON.parse(storedPortfolioValue);
+    //         }
     //checking signal value
-    effect(() => console.log(sideBarStatus.value));
+    //effect(() => console.log(sideBarStatus.value));
 
 //create and configure to my cloudinary instance
     const cld = new Cloudinary({
@@ -90,22 +102,22 @@ if (storedValue !== null) {
             <button className='sideBarMenuButtonOn' onClick={menuClick}>
                 <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </button>
-            <p className='sideBarOptions'>
+            <button className='sideBarOptions'>
                 About Us
-            </p>
-            <p className='sideBarOptions'>
+            </button>
+            <button className='sideBarOptions'>
                 Portfolio
-            </p>
-            <p className='sideBarOptions'>
+            </button>
+            <button className='sideBarOptions'>
                 Contact
-            </p>
+            </button>
         </div>
     )
 
     return (
         <div>
         {
-            sideBarStatus.value ? showingHomeSideBar : hiddingSideBarCode
+            sideBarActive ? showingHomeSideBar : hiddingSideBarCode
         }
         </div>
     )
