@@ -13,8 +13,8 @@
 }
 
 .kitchenIcon {
-    margin-top: 1vh;
-    font-size: 30px;
+    margin-top: 10vh;
+    
 }
 
 .sideBarLogo {
@@ -68,7 +68,6 @@
 }
 
 .sideBarMenuButtonOff {
-    margin-top: 10vh;
     background: transparent;
     border: none;
     cursor: pointer;

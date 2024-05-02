@@ -68,20 +68,16 @@ const SideBar = () => {
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
             </p>
             <button className='kitchenIcon sideBarOptions' title="Kitchen">
-                
-                <span>Kitchen</span>
+                Kitchen
             </button>
-            <button className='toiletIcon sideBarOptions' title="Toilet">
-                
-                <span>Toilet</span>
+            <button className='sideBarOptions' title="Toilet">
+                Bathroom
             </button>
-            <button className='bedIcon sideBarOptions' title="Bed">
-                
-                <span>Bed</span>
+            <button className='sideBarOptions' title="Bed">
+                Bedroom
             </button>
-            <button className='tvIcon sideBarOptions' title="TV">
-                
-                <span>TV</span>
+            <button className='sideBarOptions' title="TV">
+                Others
             </button>
             <button className='sideBarMenuButtonOff' onClick={backToMenuClick}>
                 <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
