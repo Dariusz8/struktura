@@ -59,6 +59,14 @@
     transform: rotate(180deg);
 }
 
+.mutedSideBarMenuButtonOn {
+    margin-top: 10vh;
+    background: transparent;
+    border: none;
+    cursor:default;
+    transform: rotate(180deg);
+}
+
 .sideBarMenuButtonOff {
     margin-top: 10vh;
     background: transparent;

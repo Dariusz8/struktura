@@ -103,7 +103,7 @@ const SideBar = () => {
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
             </p>
-            <button className='sideBarMenuButtonOn' >
+            <button className='mutedSideBarMenuButtonOn' >
                 <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </button>
             <button className='sideBarOptions'>
