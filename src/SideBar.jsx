@@ -12,17 +12,21 @@ import React, {useState} from 'react';
 
 const SideBar = () => {
 
-    const [sideBarActive, setSideBarActive] = useState(false);
+    const [sideBarActive, setSideBarActive] = useState(true);
     const [portfolioActive, setPortfolioActive] = useState(false);
     const [aboutActive, setAboutActive] = useState(false);
     const [contactActive, setContactActive] = useState(false);
     
-    
-    const menuClick = () => {
+    //wtv wants to be shown fist be default one and then ! ...
+
+    const portfolioClick = () => {
+        setSideBarActive(false)
+        setPortfolioActive(true);
+    }
+
+    const backToMenuClick = () => {
         setPortfolioActive(false);
-        setAboutActive(false);
-        setContactActive(false);
-        setSideBarActive(!sideBarActive);
+        setSideBarActive(true);
     }
 
 //when was trying to use signals for state
@@ -63,24 +67,24 @@ const SideBar = () => {
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
             </p>
-            <button className='sideBarMenuButtonOn' onClick={menuClick}>
-                <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
-            </button>
             <button className='kitchenIcon sideBarOptions' title="Kitchen">
-                <MdOutlineKitchen />
+                
                 <span>Kitchen</span>
             </button>
             <button className='toiletIcon sideBarOptions' title="Toilet">
-                <PiToiletBold />
+                
                 <span>Toilet</span>
             </button>
             <button className='bedIcon sideBarOptions' title="Bed">
-                <LiaBedSolid />
+                
                 <span>Bed</span>
             </button>
             <button className='tvIcon sideBarOptions' title="TV">
-                <PiTelevisionSimpleBold />
+                
                 <span>TV</span>
+            </button>
+            <button className='sideBarMenuButtonOff' onClick={backToMenuClick}>
+                <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </button>
         </div>)
         
@@ -89,7 +93,7 @@ const SideBar = () => {
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
             </p>
-            <button className='sideBarMenuButtonOff' onClick={menuClick}>
+            <button className='sideBarMenuButtonOff' >
                 <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </button>
         </div>)
@@ -99,13 +103,13 @@ const SideBar = () => {
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
             </p>
-            <button className='sideBarMenuButtonOn' onClick={menuClick}>
+            <button className='sideBarMenuButtonOn' >
                 <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </button>
             <button className='sideBarOptions'>
                 About Us
             </button>
-            <button className='sideBarOptions'>
+            <button className='sideBarOptions' onClick={portfolioClick}>
                 Portfolio
             </button>
             <button className='sideBarOptions'>
@@ -117,7 +121,10 @@ const SideBar = () => {
     return (
         <div>
         {
-            sideBarActive ? showingHomeSideBar : hiddingSideBarCode
+            sideBarActive && showingHomeSideBar
+        }
+        {
+            portfolioActive && showingPorfolioSideBar
         }
         </div>
     )
