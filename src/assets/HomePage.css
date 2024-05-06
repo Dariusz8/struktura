@@ -3,12 +3,14 @@
     left:20vw;
     top:10vh;
     max-width: 80vw;
-    max-height: 100vh;
+    max-height: 80vh;
+    overflow-y: scroll;
 }
 
 .searchBar {
     width: 35vw;
     position: fixed;
+    top: 8vh;
     left:25vw;
     border: none;
     border-radius: 5px;
