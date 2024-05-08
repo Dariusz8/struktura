@@ -10,7 +10,7 @@ const HomePage = () => {
           cloudName: 'dly85se71'
         }
       });
-    
+    //NEED TO ADD LAZY LOAD OF SORT 
       const testImg1 = cld.image('cld-sample-5');
       const testImg2 = cld.image('cld-sample-3');
       const testImg3 = cld.image('cld-sample-4');
