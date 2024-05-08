@@ -1,10 +1,12 @@
 .homeBoxDaddy {
+    margin-top: 2vh;
     position: fixed;
     left:20vw;
     top:10vh;
     max-width: 80vw;
     max-height: 80vh;
     overflow-y: scroll;
+    border-radius: 5%;
 }
 
 .searchBar {
