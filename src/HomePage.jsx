@@ -10,7 +10,7 @@ const HomePage = () => {
           cloudName: 'dly85se71'
         }
       });
-    //NEED TO ADD LAZY LOAD OF SORT 
+    //NEED TO ADD LAZY LOAD OF SORT, put these pictures elsewhere with all to export from
       const testImg1 = cld.image('cld-sample-5');
       const testImg2 = cld.image('cld-sample-3');
       const testImg3 = cld.image('cld-sample-4');
@@ -18,7 +18,6 @@ const HomePage = () => {
       const testImg5 = cld.image('cld-sample');
     //create and configure to my cloudinary instance
     const [before, setBefore] = useState(true);
-    const [after,setAfter] = useState(false);
     const [pictures,setPictures] = useState({
         entry1:{
             pre: testImg1,
@@ -35,8 +34,7 @@ const HomePage = () => {
     })
     //FUNCTIONS
     const screenClick = () => {
-        setBefore(!before)
-        setAfter(!after)
+        setBefore(!before);
     }
     //CODE TO EXPORT AFTER
     const showingBeforePictures = (
@@ -57,7 +55,7 @@ const HomePage = () => {
     const showingAfterPictures = (
         <div>
             <input type="text" className="searchBar" placeholder="Search..." />
-            <div className='homeBoxDaddy'>
+            <div className='homeBoxDaddy' onClick={screenClick}>
                 {pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <div key={index}>
                         <AdvancedImage cldImg={entry.post} />
@@ -73,10 +71,7 @@ const HomePage = () => {
     return (
         <div>
         {
-            before && showingBeforePictures
-        }
-        {
-            after && showingAfterPictures
+            before ? showingBeforePictures : showingAfterPictures
         }
         </div>
     )

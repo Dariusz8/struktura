@@ -7,6 +7,7 @@
     max-height: 80vh;
     overflow-y: scroll;
     border-radius: 5%;
+    z-index: -1;
 }
 
 .searchBar {
