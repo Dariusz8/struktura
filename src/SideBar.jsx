@@ -15,7 +15,6 @@ const SideBar = () => {
     const [sideBarActive, setSideBarActive] = useState(true);
     const [portfolioActive, setPortfolioActive] = useState(false);
     const [aboutActive, setAboutActive] = useState(false);
-    const [contactActive, setContactActive] = useState(false);
     
     //wtv wants to be shown fist be default one and then ! ...
 
@@ -28,6 +27,14 @@ const SideBar = () => {
         setPortfolioActive(false);
         setSideBarActive(true);
     }
+
+    const aboutClick = () => {
+        setAboutActive(true);
+    }
+
+    const contactClick = () => {
+        window.location.href = "mailto:struktura.reno@gmail.com";
+      };
 
 //when was trying to use signals for state
     // const portfolioClick = () => {
@@ -108,7 +115,7 @@ const SideBar = () => {
             <button className='sideBarOptions' onClick={portfolioClick}>
                 Portfolio
             </button>
-            <button className='sideBarOptions'>
+            <button onClick={contactClick} className='sideBarOptions'>
                 Contact
             </button>
         </div>
