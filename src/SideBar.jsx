@@ -9,6 +9,8 @@ import { MdOutlineKitchen } from "react-icons/md";
 //import { signal, effect } from "@preact/signals-react";
 //import { sideBarStatus, portfolioStatus } from './App';
 import React, {useState} from 'react';
+import { format } from '@cloudinary/url-gen/actions/delivery';
+import { auto } from '@cloudinary/url-gen/qualifiers/format';
 
 const SideBar = () => {
 

@@ -3,12 +3,16 @@ import './assets/HomePage.css';
 import React, {useState} from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage, placeholder, lazyload} from '@cloudinary/react';
-import {limitFill, scale} from "@cloudinary/url-gen/actions/resize";
+import {limitFill, scale, thumbnail} from "@cloudinary/url-gen/actions/resize";
 import { image, text } from '@cloudinary/url-gen/qualifiers/source';
 import { TextStyle } from '@cloudinary/url-gen/qualifiers/textStyle';
 import { source } from '@cloudinary/url-gen/actions/overlay';
 import { Position } from '@cloudinary/url-gen/qualifiers/position';
-import { compass } from '@cloudinary/url-gen/qualifiers/gravity';
+import { compass, focusOn } from '@cloudinary/url-gen/qualifiers/gravity';
+import { opacity } from '@cloudinary/url-gen/actions/adjust';
+import { Transformation } from '@cloudinary/url-gen';
+import { format } from '@cloudinary/url-gen/actions/delivery';
+import { auto } from '@cloudinary/url-gen/qualifiers/format';
 
 const HomePage = () => {
     const cld = new Cloudinary({
@@ -30,7 +34,19 @@ const HomePage = () => {
             source(
                 text('Before', new TextStyle("Arial", 40))
                 )
-        .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
+                .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
+        )
+        .overlay(
+            source(
+                image('STRUKTURA').transformation(
+                    new Transformation()
+                    .resize(scale().width(150))
+                    .adjust(opacity(20))
+                )
+                )
+            .position(
+                new Position().allowOverflow(false).gravity(compass("south_east"))
+            )
         );
 
         testImg2.format('auto')
@@ -41,7 +57,63 @@ const HomePage = () => {
                 text('After', new TextStyle("Arial", 40))
                 )
         .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
-        );
+        )
+        .overlay(
+            source(
+                image('STRUKTURA').transformation(
+                    new Transformation()
+                    .resize(scale().width(150))
+                    .adjust(opacity(20))
+                )
+                )
+            .position(
+                new Position().allowOverflow(false).gravity(compass("south_east"))
+            )
+        );;
+
+        testImg3.format('auto')
+        .quality('auto')
+        .resize(scale())
+        .overlay(
+            source(
+                text('Before', new TextStyle("Arial", 40))
+                )
+        .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
+        )
+        .overlay(
+            source(
+                image('STRUKTURA').transformation(
+                    new Transformation()
+                    .resize(scale().width(150))
+                    .adjust(opacity(20))
+                )
+                )
+            .position(
+                new Position().allowOverflow(false).gravity(compass("south_east"))
+            )
+        );;
+
+        testImg4.format('auto')
+        .quality('auto')
+        .resize(scale())
+        .overlay(
+            source(
+                text('After', new TextStyle("Arial", 40))
+                )
+        .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
+        )
+        .overlay(
+            source(
+                image('STRUKTURA').transformation(
+                    new Transformation()
+                    .resize(scale().width(150))
+                    .adjust(opacity(20))
+                )
+                )
+            .position(
+                new Position().allowOverflow(false).gravity(compass("south_east"))
+            )
+        );;
 
         //just pic overlay
         // .overlay(
