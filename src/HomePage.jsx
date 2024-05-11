@@ -2,7 +2,8 @@ import './assets/HomePage.css';
 //import { signal, effect } from "@preact/signals";
 import React, {useState} from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
-import {AdvancedImage} from '@cloudinary/react';
+import {AdvancedImage, placeholder, lazyload} from '@cloudinary/react';
+import {limitFill, scale} from "@cloudinary/url-gen/actions/resize";
 
 const HomePage = () => {
     const cld = new Cloudinary({
@@ -10,12 +11,15 @@ const HomePage = () => {
           cloudName: 'dly85se71'
         }
       });
-    //NEED TO ADD LAZY LOAD OF SORT, put these pictures elsewhere with all to export from
+    //NEED TO ADD LAZY LOAD OF SORT-watermark-preBeforeText, put these pictures elsewhere with all to export from
       const testImg1 = cld.image('cld-sample-5');
       const testImg2 = cld.image('cld-sample-3');
       const testImg3 = cld.image('cld-sample-4');
       const testImg4 = cld.image('cld-sample-2');
-      const testImg5 = cld.image('cld-sample');
+
+      testImg1.format('auto')
+      .quality('auto')
+      .resize(scale());
     //create and configure to my cloudinary instance
     const [before, setBefore] = useState(true);
     const [pictures,setPictures] = useState({
@@ -43,7 +47,7 @@ const HomePage = () => {
             <div className='homeBoxDaddy' onClick={screenClick}>
                 {pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <div key={index}>
-                        <AdvancedImage cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
                         <p>
                             {entry.info}
                         </p>
@@ -58,7 +62,7 @@ const HomePage = () => {
             <div className='homeBoxDaddy' onClick={screenClick}>
                 {pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <div key={index}>
-                        <AdvancedImage cldImg={entry.post} />
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.post} />
                         <p>
                             {entry.info}
                         </p>

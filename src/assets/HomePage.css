@@ -7,8 +7,8 @@
     max-height: 80vh;
     overflow-y: scroll;
     border-radius: 5%;
-    z-index: -1;
 }
+/*putting homeBOxDaddy z index behind takes away the scroll with loader over it */
 
 .searchBar {
     width: 35vw;
