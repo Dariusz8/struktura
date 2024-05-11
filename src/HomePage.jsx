@@ -4,22 +4,52 @@ import React, {useState} from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage, placeholder, lazyload} from '@cloudinary/react';
 import {limitFill, scale} from "@cloudinary/url-gen/actions/resize";
+import { image, text } from '@cloudinary/url-gen/qualifiers/source';
+import { TextStyle } from '@cloudinary/url-gen/qualifiers/textStyle';
+import { source } from '@cloudinary/url-gen/actions/overlay';
+import { Position } from '@cloudinary/url-gen/qualifiers/position';
+import { compass } from '@cloudinary/url-gen/qualifiers/gravity';
 
 const HomePage = () => {
     const cld = new Cloudinary({
         cloud: {
           cloudName: 'dly85se71'
         }
-      });
+    });
     //NEED TO ADD LAZY LOAD OF SORT-watermark-preBeforeText, put these pictures elsewhere with all to export from
-      const testImg1 = cld.image('cld-sample-5');
-      const testImg2 = cld.image('cld-sample-3');
-      const testImg3 = cld.image('cld-sample-4');
-      const testImg4 = cld.image('cld-sample-2');
+    const testImg1 = cld.image('cld-sample-5');
+    const testImg2 = cld.image('cld-sample-3');
+    const testImg3 = cld.image('cld-sample-4');
+    const testImg4 = cld.image('cld-sample-2');
+    const logoImg = cld.image('STRUKTURA');
 
-      testImg1.format('auto')
-      .quality('auto')
-      .resize(scale());
+    testImg1.format('auto')
+        .quality('auto')
+        .resize(scale())
+        .overlay(
+            source(
+                text('Before', new TextStyle("Arial", 40))
+                )
+        .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
+        );
+
+        testImg2.format('auto')
+        .quality('auto')
+        .resize(scale())
+        .overlay(
+            source(
+                text('After', new TextStyle("Arial", 40))
+                )
+        .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
+        );
+
+        //just pic overlay
+        // .overlay(
+        //     source(
+        //         image('STRUKTURA')
+        //         )
+        // )
+
     //create and configure to my cloudinary instance
     const [before, setBefore] = useState(true);
     const [pictures,setPictures] = useState({
