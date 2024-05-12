@@ -9,8 +9,10 @@ import { TextStyle } from '@cloudinary/url-gen/qualifiers/textStyle';
 import { source } from '@cloudinary/url-gen/actions/overlay';
 import { Position } from '@cloudinary/url-gen/qualifiers/position';
 import { compass, focusOn } from '@cloudinary/url-gen/qualifiers/gravity';
-import { opacity } from '@cloudinary/url-gen/actions/adjust';
+import { opacity, replaceColor } from '@cloudinary/url-gen/actions/adjust';
 import { Transformation } from '@cloudinary/url-gen';
+import { grayscale, colorize } from '@cloudinary/url-gen/actions/effect';
+//LOOK INTO optimal delivery
 import { format } from '@cloudinary/url-gen/actions/delivery';
 import { auto } from '@cloudinary/url-gen/qualifiers/format';
 
@@ -20,12 +22,11 @@ const HomePage = () => {
           cloudName: 'dly85se71'
         }
     });
-    //NEED TO ADD LAZY LOAD OF SORT-watermark-preBeforeText, put these pictures elsewhere with all to export from
+    //NEED  maybe put these pictures elsewhere with all to export from
     const testImg1 = cld.image('cld-sample-5');
     const testImg2 = cld.image('cld-sample-3');
     const testImg3 = cld.image('cld-sample-4');
     const testImg4 = cld.image('cld-sample-2');
-    const logoImg = cld.image('STRUKTURA');
 
     testImg1.format('auto')
         .quality('auto')
@@ -41,7 +42,8 @@ const HomePage = () => {
                 image('STRUKTURA').transformation(
                     new Transformation()
                     .resize(scale().width(150))
-                    .adjust(opacity(20))
+                    .adjust(opacity(100))
+                    .adjust(replaceColor("white"))
                 )
                 )
             .position(
@@ -63,13 +65,17 @@ const HomePage = () => {
                 image('STRUKTURA').transformation(
                     new Transformation()
                     .resize(scale().width(150))
-                    .adjust(opacity(20))
+                    .adjust(opacity(100))
+                    .effect(
+                        colorize()
+                        .color('white')
+                    )
                 )
                 )
             .position(
-                new Position().allowOverflow(false).gravity(compass("south_east"))
+                new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(150)
             )
-        );;
+        );
 
         testImg3.format('auto')
         .quality('auto')
@@ -85,13 +91,14 @@ const HomePage = () => {
                 image('STRUKTURA').transformation(
                     new Transformation()
                     .resize(scale().width(150))
-                    .adjust(opacity(20))
+                    .adjust(opacity(100))
+                    .effect(grayscale())
                 )
                 )
             .position(
                 new Position().allowOverflow(false).gravity(compass("south_east"))
             )
-        );;
+        );
 
         testImg4.format('auto')
         .quality('auto')
@@ -107,22 +114,14 @@ const HomePage = () => {
                 image('STRUKTURA').transformation(
                     new Transformation()
                     .resize(scale().width(150))
-                    .adjust(opacity(20))
+                    .adjust(opacity(50))
                 )
                 )
             .position(
                 new Position().allowOverflow(false).gravity(compass("south_east"))
             )
-        );;
-
-        //just pic overlay
-        // .overlay(
-        //     source(
-        //         image('STRUKTURA')
-        //         )
-        // )
-
-    //create and configure to my cloudinary instance
+        );
+    //STATES PICS
     const [before, setBefore] = useState(true);
     const [pictures,setPictures] = useState({
         entry1:{
@@ -142,7 +141,7 @@ const HomePage = () => {
     const screenClick = () => {
         setBefore(!before);
     }
-    //CODE TO EXPORT AFTER
+
     const showingBeforePictures = (
         <div>
             <input type="text" className="searchBar" placeholder="Search..." />
