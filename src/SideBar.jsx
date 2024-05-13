@@ -13,15 +13,19 @@ import { format } from '@cloudinary/url-gen/actions/delivery';
 import { auto } from '@cloudinary/url-gen/qualifiers/format';
 
 const SideBar = () => {
-
+//NEED MOVE and createContext to simplify
     const [sideBarActive, setSideBarActive] = useState(true);
     const [portfolioActive, setPortfolioActive] = useState(false);
     const [aboutActive, setAboutActive] = useState(false);
+    const [kitchenActive, setKitchenActive] = useState(false);
+    const [bathroomActive, setBathroomActive] = useState(false);
+    const [bedroomActive, setBedroomActive] = useState(false);
     
     //wtv wants to be shown fist be default one and then ! ...
 
     const portfolioClick = () => {
-        setSideBarActive(false)
+        setSideBarActive(false);
+        setAboutActive(false);
         setPortfolioActive(true);
     }
 
@@ -31,7 +35,29 @@ const SideBar = () => {
     }
 
     const aboutClick = () => {
+        setPortfolioActive(false)
         setAboutActive(true);
+    }
+//SET ALL TO OPPOSITE SO CAN BACK AND FORTH STATE
+    const kitchenClick = () => {
+        setPortfolioActive(false);
+        setBathroomActive(false);
+        setBedroomActive(false);
+        setKitchenActive(true);
+    }
+
+    const bathroomClick = () => {
+        setPortfolioActive(false);
+        setKitchenActive(false);
+        setBedroomActive(false);
+        setBathroomActive(true);
+    }
+
+    const bedroomClick = () => {
+        setPortfolioActive(false);
+        setKitchenActive(false);
+        setBathroomActive(false);
+        setBedroomActive(true)
     }
 
     const contactClick = () => {
@@ -76,13 +102,13 @@ const SideBar = () => {
             <p className='sideBarLogo'>
                 <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
             </p>
-            <button className='kitchenIcon sideBarOptions' title="Kitchen">
+            <button className='kitchenIcon sideBarOptions' title="Kitchen" onClick={kitchenClick}>
                 Kitchen
             </button>
-            <button className='sideBarOptions' title="Toilet">
+            <button className='sideBarOptions' title="Toilet" onClick={bathroomClick}>
                 Bathroom
             </button>
-            <button className='sideBarOptions' title="Bed">
+            <button className='sideBarOptions' title="Bed" onClick={bedroomClick}>
                 Bedroom
             </button>
             <button className='sideBarOptions' title="TV">

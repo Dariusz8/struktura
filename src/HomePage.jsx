@@ -27,6 +27,13 @@ const HomePage = () => {
     const testImg2 = cld.image('cld-sample-3');
     const testImg3 = cld.image('cld-sample-4');
     const testImg4 = cld.image('cld-sample-2');
+    const bath1 = cld.image('bath1');
+    const bath1b = cld.image('bath1b');
+    const bath1c = cld.image('bath1c');
+    const bath2 = cld.image('bath2');
+    const bath2b = cld.image('bath2b');
+    const bath2c = cld.image('bath2c');
+
 
     testImg1.format('auto')
         .quality('auto')
@@ -133,6 +140,30 @@ const HomePage = () => {
         entry2:{
             pre: testImg3,
             post: testImg4,
+            tag: ["blue"],
+            info: "Texas"
+        },
+        entry3:{
+            pre: bath1,
+            post: "bathroom",
+            tag: ["bathroom"],
+            info: "Texas"
+        },
+        entry4:{
+            pre: bath1b,
+            post: bath1c,
+            tag: ["bathroom"],
+            info: "Texas"
+        },
+        entry5:{
+            pre: bath2,
+            post: "bathroom",
+            tag: ["bathroom"],
+            info: "Texas"
+        },
+        entry6:{
+            pre: bath2b,
+            post: bath2c,
             tag: ["blue"],
             info: "Texas"
         },
