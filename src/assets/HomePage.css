@@ -6,6 +6,7 @@
     max-width: 80vw;
     max-height: 80vh;
     overflow-y: scroll;
+    overflow-x: hidden;
     border-radius: 5%;
 }
 /*putting homeBOxDaddy z index behind takes away the scroll with loader over it */

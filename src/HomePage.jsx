@@ -3,7 +3,7 @@ import './assets/HomePage.css';
 import React, {useState} from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage, placeholder, lazyload} from '@cloudinary/react';
-import {limitFill, scale, thumbnail} from "@cloudinary/url-gen/actions/resize";
+import {limitFill, scale, fit, fill, thumbnail} from "@cloudinary/url-gen/actions/resize";
 import { image, text } from '@cloudinary/url-gen/qualifiers/source';
 import { TextStyle } from '@cloudinary/url-gen/qualifiers/textStyle';
 import { source } from '@cloudinary/url-gen/actions/overlay';
@@ -30,7 +30,7 @@ const HomePage = () => {
 
     testImg1.format('auto')
         .quality('auto')
-        .resize(scale())
+        .resize(fill().aspectRatio("1.0"))
         .overlay(
             source(
                 text('Before', new TextStyle("Arial", 40))
@@ -53,7 +53,7 @@ const HomePage = () => {
 
         testImg2.format('auto')
         .quality('auto')
-        .resize(scale())
+        .resize(fill().aspectRatio("1.0"))
         .overlay(
             source(
                 text('After', new TextStyle("Arial", 40))
@@ -79,7 +79,7 @@ const HomePage = () => {
 
         testImg3.format('auto')
         .quality('auto')
-        .resize(scale())
+        .resize(fill().aspectRatio("1.0"))
         .overlay(
             source(
                 text('Before', new TextStyle("Arial", 40))
@@ -102,7 +102,7 @@ const HomePage = () => {
 
         testImg4.format('auto')
         .quality('auto')
-        .resize(scale())
+        .resize(fill().aspectRatio("1.0"))
         .overlay(
             source(
                 text('After', new TextStyle("Arial", 40))
