@@ -1,26 +1,23 @@
-import { signal } from '@preact/signals-react'
 import './App.css'
 import LogoLoader from './LogoLoader';
 import SideBar from './SideBar'; 
 import HomePage from './HomePage';
+import React, { createContext, useState} from 'react';
 
-//all signals values. put in sep file, resort to useState if cannot avoid refreshing to show updated FE
-// export const sideBarStatus = signal(false);
-// export const portfolioStatus = signal(false);
+export const MyStateContext = createContext();
 
 function App() {
-  //const count = signal(0);
+  
+const [contextCounter, setContextCounter] = useState(0);
+
   return (
-    <>
+    <MyStateContext.Provider value ={{ contextCounter, setContextCounter}}>
       <div>
-        {/* <button onClick={() => count.value += 1}>
-          count is {count}
-        </button> */}
         <LogoLoader/>
         <SideBar/>
         <HomePage/>
       </div>
-    </>
+    </MyStateContext.Provider>
   )
 }
 

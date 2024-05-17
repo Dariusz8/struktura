@@ -8,9 +8,10 @@ import { PiToiletBold } from "react-icons/pi";
 import { MdOutlineKitchen } from "react-icons/md";
 //import { signal, effect } from "@preact/signals-react";
 //import { sideBarStatus, portfolioStatus } from './App';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { format } from '@cloudinary/url-gen/actions/delivery';
 import { auto } from '@cloudinary/url-gen/qualifiers/format';
+import { MyStateContext } from './App';
 
 const SideBar = () => {
 //NEED MOVE and createContext to simplify
@@ -20,6 +21,8 @@ const SideBar = () => {
     const [kitchenActive, setKitchenActive] = useState(false);
     const [bathroomActive, setBathroomActive] = useState(false);
     const [bedroomActive, setBedroomActive] = useState(false);
+    const { contextCounter, setContextCounter } = useContext(MyStateContext);
+    
     
     //wtv wants to be shown fist be default one and then ! ...
 
@@ -27,6 +30,7 @@ const SideBar = () => {
         setSideBarActive(false);
         setAboutActive(false);
         setPortfolioActive(true);
+        setContextCounter(contextCounter+1)
     }
 
     const backToMenuClick = () => {
