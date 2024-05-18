@@ -1,5 +1,4 @@
 import './assets/HomePage.css';
-//import { signal, effect } from "@preact/signals";
 import React, {useState} from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage, placeholder, lazyload} from '@cloudinary/react';
@@ -12,9 +11,7 @@ import { compass, focusOn } from '@cloudinary/url-gen/qualifiers/gravity';
 import { opacity, replaceColor } from '@cloudinary/url-gen/actions/adjust';
 import { Transformation } from '@cloudinary/url-gen';
 import { grayscale, colorize } from '@cloudinary/url-gen/actions/effect';
-//LOOK INTO optimal delivery
-import { format } from '@cloudinary/url-gen/actions/delivery';
-import { auto } from '@cloudinary/url-gen/qualifiers/format';
+import { MyStateContext } from './App';
 
 const HomePage = () => {
     const cld = new Cloudinary({
@@ -129,6 +126,7 @@ const HomePage = () => {
             )
         );
     //STATES PICS
+    
     const [before, setBefore] = useState(true);
     const [pictures,setPictures] = useState({
         entry1:{

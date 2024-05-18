@@ -8,7 +8,7 @@ import { auto } from '@cloudinary/url-gen/qualifiers/format';
 import { MyStateContext } from './App';
 
 const SideBar = () => {
-    const { contextCounter,setContextCounter, sideBarActive,setSideBarActive, portfolioActive, setPortfolioActive,
+    const {sideBarActive,setSideBarActive, portfolioActive, setPortfolioActive,
         aboutActive,setAboutActive, kitchenActive,setKitchenActive, bathroomActive,setBathroomActive, bedroomActive,setBedroomActive} = useContext(MyStateContext);
     
     
