@@ -2,26 +2,14 @@ import './assets/SideBar.css';
 import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage} from '@cloudinary/react';
 import {limitFill, scale} from "@cloudinary/url-gen/actions/resize";
-import { PiTelevisionSimpleBold } from "react-icons/pi";
-import { LiaBedSolid } from "react-icons/lia";
-import { PiToiletBold } from "react-icons/pi";
-import { MdOutlineKitchen } from "react-icons/md";
-//import { signal, effect } from "@preact/signals-react";
-//import { sideBarStatus, portfolioStatus } from './App';
 import React, {useState, useContext} from 'react';
 import { format } from '@cloudinary/url-gen/actions/delivery';
 import { auto } from '@cloudinary/url-gen/qualifiers/format';
 import { MyStateContext } from './App';
 
 const SideBar = () => {
-//NEED MOVE and createContext to simplify
-    const [sideBarActive, setSideBarActive] = useState(true);
-    const [portfolioActive, setPortfolioActive] = useState(false);
-    const [aboutActive, setAboutActive] = useState(false);
-    const [kitchenActive, setKitchenActive] = useState(false);
-    const [bathroomActive, setBathroomActive] = useState(false);
-    const [bedroomActive, setBedroomActive] = useState(false);
-    const { contextCounter, setContextCounter } = useContext(MyStateContext);
+    const { contextCounter,setContextCounter, sideBarActive,setSideBarActive, portfolioActive, setPortfolioActive,
+        aboutActive,setAboutActive, kitchenActive,setKitchenActive, bathroomActive,setBathroomActive, bedroomActive,setBedroomActive} = useContext(MyStateContext);
     
     
     //wtv wants to be shown fist be default one and then ! ...
