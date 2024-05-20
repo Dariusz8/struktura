@@ -9,7 +9,7 @@ import { MyStateContext } from './App';
 
 const SideBar = () => {
     const {sideBarActive,setSideBarActive, portfolioActive, setPortfolioActive,
-        aboutActive,setAboutActive, kitchenActive,setKitchenActive, bathroomActive,setBathroomActive, bedroomActive,setBedroomActive} = useContext(MyStateContext);
+        setAboutActive,setKitchenActive,setBathroomActive,bathroomActive,setBedroomActive} = useContext(MyStateContext);
     
     
     //wtv wants to be shown fist be default one and then ! ...
@@ -39,10 +39,10 @@ const SideBar = () => {
     }
 
     const bathroomClick = () => {
-        setPortfolioActive(false);
+        //setPortfolioActive(false);
         setKitchenActive(false);
         setBedroomActive(false);
-        setBathroomActive(true);
+        setBathroomActive(!bathroomActive);
     }
 
     const bedroomClick = () => {

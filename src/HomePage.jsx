@@ -1,5 +1,5 @@
 import './assets/HomePage.css';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage, placeholder, lazyload} from '@cloudinary/react';
 import {limitFill, scale, fit, fill, thumbnail} from "@cloudinary/url-gen/actions/resize";
@@ -14,6 +14,7 @@ import { grayscale, colorize } from '@cloudinary/url-gen/actions/effect';
 import { MyStateContext } from './App';
 
 const HomePage = () => {
+    const { bathroomActive } = useContext(MyStateContext);
     const cld = new Cloudinary({
         cloud: {
           cloudName: 'dly85se71'
@@ -201,11 +202,38 @@ const HomePage = () => {
             </div>
         </div>)
 
+    const showingBathroom = (
+        <div>
+            <input type="text" className="searchBar" placeholder="Search..." />
+            <div className='homeBoxDaddy' onClick={screenClick}>
+                {pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
+                    <>
+                    {
+                        entry.tag =="bathroom" &&
+                        <div key={index}>
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <p>
+                            {entry.info}
+                        </p>
+                        </div>
+                    }
+                    </>
+                ))}
+            </div>
+        </div>
+    )
+
     
     return (
         <div>
         {
-            before ? showingBeforePictures : showingAfterPictures
+            before && showingBeforePictures 
+        }
+        {
+            !before && showingAfterPictures
+        }
+        {
+            bathroomActive && showingBathroom
         }
         </div>
     )
