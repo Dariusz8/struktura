@@ -8,7 +8,6 @@ export const MyStateContext = createContext();
 
 function App() {
 
-//const [contextCounter, setContextCounter] = useState(0);
 const [sideBarActive, setSideBarActive] = useState(true);
 const [portfolioActive, setPortfolioActive] = useState(false);
 const [aboutActive, setAboutActive] = useState(false);
