@@ -14,17 +14,17 @@ import { grayscale, colorize } from '@cloudinary/url-gen/actions/effect';
 import { MyStateContext } from './App';
 
 const HomePage = () => {
-    const { bathroomActive } = useContext(MyStateContext);
+    const { aboutActive,bathroomActive, portfolioActive } = useContext(MyStateContext);
     const cld = new Cloudinary({
         cloud: {
           cloudName: 'dly85se71'
         }
     });
     //NEED  maybe put these pictures elsewhere with all to export from
-    const testImg1 = cld.image('cld-sample-5');
-    const testImg2 = cld.image('cld-sample-3');
-    const testImg3 = cld.image('cld-sample-4');
-    const testImg4 = cld.image('cld-sample-2');
+    //const testImg1 = cld.image('cld-sample-5');
+    //const testImg2 = cld.image('cld-sample-3');
+    //const testImg3 = cld.image('cld-sample-4');
+    //const testImg4 = cld.image('cld-sample-2');
     const bath1 = cld.image('bath1');
     const bath1b = cld.image('bath1b');
     const bath1c = cld.image('bath1c');
@@ -33,167 +33,152 @@ const HomePage = () => {
     const bath2c = cld.image('bath2c');
 
 
-    testImg1.format('auto')
-        .quality('auto')
-        .resize(fill().aspectRatio("1.0"))
-        .overlay(
-            source(
-                text('Before', new TextStyle("Arial", 40))
-                )
-                .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
-        )
-        .overlay(
-            source(
-                image('STRUKTURA').transformation(
-                    new Transformation()
-                    .resize(scale().width(150))
-                    .adjust(opacity(100))
-                    .adjust(replaceColor("white"))
-                )
-                )
-            .position(
-                new Position().allowOverflow(false).gravity(compass("south_east"))
-            )
-        );
+    // testImg1.format('auto')
+    //     .quality('auto')
+    //     .resize(fill().aspectRatio("1.0"))
+    //     .overlay(
+    //         source(
+    //             text('Before', new TextStyle("Arial", 40))
+    //             )
+    //             .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
+    //     )
+    //     .overlay(
+    //         source(
+    //             image('STRUKTURA').transformation(
+    //                 new Transformation()
+    //                 .resize(scale().width(150))
+    //                 .adjust(opacity(100))
+    //                 .adjust(replaceColor("white"))
+    //             )
+    //             )
+    //         .position(
+    //             new Position().allowOverflow(false).gravity(compass("south_east"))
+    //         )
+    //     );
 
-        testImg2.format('auto')
-        .quality('auto')
-        .resize(fill().aspectRatio("1.0"))
-        .overlay(
-            source(
-                text('After', new TextStyle("Arial", 40))
-                )
-        .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
-        )
-        .overlay(
-            source(
-                image('STRUKTURA').transformation(
-                    new Transformation()
-                    .resize(scale().width(150))
-                    .adjust(opacity(100))
-                    .effect(
-                        colorize()
-                        .color('white')
-                    )
-                )
-                )
-            .position(
-                new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(150)
-            )
-        );
+    //     testImg2.format('auto')
+    //     .quality('auto')
+    //     .resize(fill().aspectRatio("1.0"))
+    //     .overlay(
+    //         source(
+    //             text('After', new TextStyle("Arial", 40))
+    //             )
+    //     .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
+    //     )
+    //     .overlay(
+    //         source(
+    //             image('STRUKTURA').transformation(
+    //                 new Transformation()
+    //                 .resize(scale().width(150))
+    //                 .adjust(opacity(100))
+    //                 .effect(
+    //                     colorize()
+    //                     .color('white')
+    //                 )
+    //             )
+    //             )
+    //         .position(
+    //             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(150)
+    //         )
+    //     );
 
-        testImg3.format('auto')
-        .quality('auto')
-        .resize(fill().aspectRatio("1.0"))
-        .overlay(
-            source(
-                text('Before', new TextStyle("Arial", 40))
-                )
-        .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
-        )
-        .overlay(
-            source(
-                image('STRUKTURA').transformation(
-                    new Transformation()
-                    .resize(scale().width(150))
-                    .adjust(opacity(100))
-                    .effect(grayscale())
-                )
-                )
-            .position(
-                new Position().allowOverflow(false).gravity(compass("south_east"))
-            )
-        );
+    //     testImg3.format('auto')
+    //     .quality('auto')
+    //     .resize(fill().aspectRatio("1.0"))
+    //     .overlay(
+    //         source(
+    //             text('Before', new TextStyle("Arial", 40))
+    //             )
+    //     .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
+    //     )
+    //     .overlay(
+    //         source(
+    //             image('STRUKTURA').transformation(
+    //                 new Transformation()
+    //                 .resize(scale().width(150))
+    //                 .adjust(opacity(100))
+    //                 .effect(grayscale())
+    //             )
+    //             )
+    //         .position(
+    //             new Position().allowOverflow(false).gravity(compass("south_east"))
+    //         )
+    //     );
 
-        testImg4.format('auto')
-        .quality('auto')
-        .resize(fill().aspectRatio("1.0"))
-        .overlay(
-            source(
-                text('After', new TextStyle("Arial", 40))
-                )
-        .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
-        )
-        .overlay(
-            source(
-                image('STRUKTURA').transformation(
-                    new Transformation()
-                    .resize(scale().width(150))
-                    .adjust(opacity(50))
-                )
-                )
-            .position(
-                new Position().allowOverflow(false).gravity(compass("south_east"))
-            )
-        );
+    //     testImg4.format('auto')
+    //     .quality('auto')
+    //     .resize(fill().aspectRatio("1.0"))
+    //     .overlay(
+    //         source(
+    //             text('After', new TextStyle("Arial", 40))
+    //             )
+    //     .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
+    //     )
+    //     .overlay(
+    //         source(
+    //             image('STRUKTURA').transformation(
+    //                 new Transformation()
+    //                 .resize(scale().width(150))
+    //                 .adjust(opacity(50))
+    //             )
+    //             )
+    //         .position(
+    //             new Position().allowOverflow(false).gravity(compass("south_east"))
+    //         )
+    //     );
     //STATES PICS
     
-    const [before, setBefore] = useState(true);
+    //const [before, setBefore] = useState(true);
     const [pictures,setPictures] = useState({
         entry1:{
-            pre: testImg1,
-            post: testImg2,
-            tag: ["blue"],
+            pre: bath1,
+            post: null,
+            tag: ["bathroom"],
             info: "Texas"
         },
         entry2:{
-            pre: testImg3,
-            post: testImg4,
-            tag: ["blue"],
+            pre: bath1b,
+            post: null,
+            tag: ["bathroom"],
             info: "Texas"
         },
         entry3:{
-            pre: bath1,
-            post: "bathroom",
+            pre: bath1c,
+            post: null,
             tag: ["bathroom"],
             info: "Texas"
         },
         entry4:{
-            pre: bath1b,
-            post: bath1c,
+            pre: bath2,
+            post: null,
             tag: ["bathroom"],
             info: "Texas"
         },
         entry5:{
-            pre: bath2,
-            post: "bathroom",
+            pre: bath2b,
+            post: null,
             tag: ["bathroom"],
             info: "Texas"
         },
         entry6:{
-            pre: bath2b,
-            post: bath2c,
-            tag: ["blue"],
+            pre: bath2c,
+            post: null,
+            tag: ["bathroom"],
             info: "Texas"
         },
     })
     //FUNCTIONS
-    const screenClick = () => {
-        setBefore(!before);
-    }
+    // const screenClick = () => {
+    //     setBefore(!before);
+    // }
 
     const showingBeforePictures = (
         <div>
             <input type="text" className="searchBar" placeholder="Search..." />
-            <div className='homeBoxDaddy' onClick={screenClick}>
+            <div className='homeBoxDaddy' >
                 {pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <div key={index}>
                         <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
-                        <p>
-                            {entry.info}
-                        </p>
-                    </div>
-                ))}
-            </div>
-        </div>)
-    
-    const showingAfterPictures = (
-        <div>
-            <input type="text" className="searchBar" placeholder="Search..." />
-            <div className='homeBoxDaddy' onClick={screenClick}>
-                {pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
-                    <div key={index}>
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.post} />
                         <p>
                             {entry.info}
                         </p>
@@ -205,7 +190,7 @@ const HomePage = () => {
     const showingBathroom = (
         <div>
             <input type="text" className="searchBar" placeholder="Search..." />
-            <div className='homeBoxDaddy' onClick={screenClick}>
+            <div className='homeBoxDaddy'>
                 {pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <>
                     {
@@ -223,17 +208,22 @@ const HomePage = () => {
         </div>
     )
 
+    const showingAbout = (
+        <div className='homeBoxDaddy'>
+            <h1>We Getting Breesh</h1>
+        </div>
+    )
     
     return (
         <div>
         {
-            before && showingBeforePictures 
-        }
-        {
-            !before && showingAfterPictures
+            portfolioActive && showingBeforePictures 
         }
         {
             bathroomActive && showingBathroom
+        }
+        {
+            aboutActive && showingAbout
         }
         </div>
     )

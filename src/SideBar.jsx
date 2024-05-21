@@ -8,68 +8,50 @@ import { auto } from '@cloudinary/url-gen/qualifiers/format';
 import { MyStateContext } from './App';
 
 const SideBar = () => {
-    const {sideBarActive,setSideBarActive, portfolioActive, setPortfolioActive,
-        setAboutActive,setKitchenActive,setBathroomActive,bathroomActive,setBedroomActive} = useContext(MyStateContext);
+    const {sideBarActive,setSideBarActive, portfolioActive,setPortfolioActive,
+        setAboutActive,aboutActive,kitchenActive,setKitchenActive,setBathroomActive,bathroomActive,bedroomActive,setBedroomActive} = useContext(MyStateContext);
     
     
     //wtv wants to be shown fist be default one and then ! ...
 
     const portfolioClick = () => {
-        setSideBarActive(false);
-        setAboutActive(false);
-        setPortfolioActive(true);
-        setContextCounter(contextCounter+1)
+        setSideBarActive(!sideBarActive);
+        setAboutActive(!aboutActive);
+        setPortfolioActive(!portfolioActive);
     }
 
     const backToMenuClick = () => {
-        setPortfolioActive(false);
-        setSideBarActive(true);
+        setPortfolioActive(!portfolioActive);
+        setSideBarActive(!sideBarActive);
     }
 
     const aboutClick = () => {
-        setPortfolioActive(false)
-        setAboutActive(true);
+        setPortfolioActive(!portfolioActive)
+        setAboutActive(!aboutActive);
     }
 //SET ALL TO OPPOSITE SO CAN BACK AND FORTH STATE
     const kitchenClick = () => {
-        setPortfolioActive(false);
-        setBathroomActive(false);
-        setBedroomActive(false);
-        setKitchenActive(true);
+        setBathroomActive(!bathroomActive);
+        setBedroomActive(!bedroomActive);
+        setKitchenActive(!kitchenActive);
     }
 
     const bathroomClick = () => {
-        //setPortfolioActive(false);
-        setKitchenActive(false);
-        setBedroomActive(false);
+        setKitchenActive(!kitchenActive);
+        setBedroomActive(!bedroomActive);
         setBathroomActive(!bathroomActive);
     }
 
     const bedroomClick = () => {
-        setPortfolioActive(false);
-        setKitchenActive(false);
-        setBathroomActive(false);
-        setBedroomActive(true)
+        setKitchenActive(!kitchenActive);
+        setBathroomActive(!bathroomActive);
+        setBedroomActive(!bedroomActive)
     }
 
     const contactClick = () => {
         window.location.href = "mailto:struktura.reno@gmail.com";
       };
 
-//when was trying to use signals for state
-    // const portfolioClick = () => {
-    //     portfolioStatus.value = !portfolioStatus.value;
-    //     localStorage.setItem('portfolioStatus', JSON.stringify(portfolioStatus.value))
-    //     window.location.reload();
-    // }
-    //     const storedPortfolioValue = localStorage.getItem('portfolioStatus');
-    //         if (storedMenuValue !== null) {
-    //         portfolioStatus.value = JSON.parse(storedPortfolioValue);
-    //         }
-    //checking signal value
-    //effect(() => console.log(sideBarStatus.value));
-
-//create and configure to my cloudinary instance
     const cld = new Cloudinary({
         cloud: {
         cloudName: 'dly85se71'
@@ -111,15 +93,15 @@ const SideBar = () => {
             </button>
         </div>)
         
-    const hiddingSideBarCode = (
-        <div className='sideBarBoxDaddy'>
-            <p className='sideBarLogo'>
-                <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
-            </p>
-            <button className='sideBarMenuButtonOff' >
-                <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
-            </button>
-        </div>)
+    // const hiddingSideBarCode = (
+    //     <div className='sideBarBoxDaddy'>
+    //         <p className='sideBarLogo'>
+    //             <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
+    //         </p>
+    //         <button className='sideBarMenuButtonOff' >
+    //             <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
+    //         </button>
+    //     </div>)
 
     const showingHomeSideBar = (
         <div className='sideBarBoxDaddy'>
@@ -129,7 +111,7 @@ const SideBar = () => {
             <button className='mutedSideBarMenuButtonOn' >
                 <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </button>
-            <button className='sideBarOptions'>
+            <button className='sideBarOptions' onClick={aboutClick}>
                 About Us
             </button>
             <button className='sideBarOptions' onClick={portfolioClick}>
