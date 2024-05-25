@@ -27,26 +27,28 @@ const SideBar = () => {
     }
 
     const aboutClick = () => {
-        setAboutActive(!aboutActive);
+        setAboutActive(true);
     }
 //SET ALL TO OPPOSITE SO CAN BACK AND FORTH STATE
     const kitchenClick = () => {
         setBathroomActive(false);
         setBedroomActive(false);
-        setKitchenActive(!kitchenActive);
+        setPortfolioActive(false);
+        setKitchenActive(true);
     }
 
     const bathroomClick = () => {
         setKitchenActive(false);
         setBedroomActive(false);
         setPortfolioActive(false);
-        setBathroomActive(!bathroomActive);
+        setBathroomActive(true);
     }
 
     const bedroomClick = () => {
         setKitchenActive(false);
         setBathroomActive(false);
-        setBedroomActive(!bedroomActive)
+        setPortfolioActive(false);
+        setBedroomActive(true);
     }
 
     const contactClick = () => {

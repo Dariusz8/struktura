@@ -32,6 +32,17 @@ const HomePage = () => {
     const bath2b = cld.image('bath2b');
     const bath2c = cld.image('bath2c');
 
+    bath1.resize(scale(0.4));
+
+    bath1b.resize(scale(0.4));
+
+    bath1c.resize(scale(0.4));
+
+    bath2.resize(scale(0.4));
+
+    bath2b.resize(scale(0.4));
+
+    bath2c.resize(scale(0.4));
 
     // testImg1.format('auto')
     //     .quality('auto')
