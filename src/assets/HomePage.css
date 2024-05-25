@@ -8,8 +8,13 @@
     overflow-y: scroll;
     overflow-x: hidden;
     border-radius: 5%;
+    border: solid red 5px;
 }
 /*putting homeBOxDaddy z index behind takes away the scroll with loader over it */
+
+.pictureBox {
+    overflow: auto;
+}
 
 .searchBar {
     width: 35vw;
