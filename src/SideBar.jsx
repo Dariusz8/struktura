@@ -11,40 +11,41 @@ const SideBar = () => {
     const {sideBarActive,setSideBarActive, portfolioActive,setPortfolioActive,
         setAboutActive,aboutActive,kitchenActive,setKitchenActive,setBathroomActive,bathroomActive,bedroomActive,setBedroomActive} = useContext(MyStateContext);
     
-    
-    //wtv wants to be shown fist be default one and then ! ...
 
     const portfolioClick = () => {
-        setSideBarActive(!sideBarActive);
-        setAboutActive(!aboutActive);
-        setPortfolioActive(!portfolioActive);
+        setSideBarActive(false);
+        setAboutActive(false);
+        setPortfolioActive(true);
     }
 
     const backToMenuClick = () => {
-        setPortfolioActive(!portfolioActive);
-        setSideBarActive(!sideBarActive);
+        setBathroomActive(false);
+        setKitchenActive(false);
+        setBedroomActive(false);
+        setPortfolioActive(false);
+        setSideBarActive(true);
     }
 
     const aboutClick = () => {
-        setPortfolioActive(!portfolioActive)
         setAboutActive(!aboutActive);
     }
 //SET ALL TO OPPOSITE SO CAN BACK AND FORTH STATE
     const kitchenClick = () => {
-        setBathroomActive(!bathroomActive);
-        setBedroomActive(!bedroomActive);
+        setBathroomActive(false);
+        setBedroomActive(false);
         setKitchenActive(!kitchenActive);
     }
 
     const bathroomClick = () => {
-        setKitchenActive(!kitchenActive);
-        setBedroomActive(!bedroomActive);
+        setKitchenActive(false);
+        setBedroomActive(false);
+        setPortfolioActive(false);
         setBathroomActive(!bathroomActive);
     }
 
     const bedroomClick = () => {
-        setKitchenActive(!kitchenActive);
-        setBathroomActive(!bathroomActive);
+        setKitchenActive(false);
+        setBathroomActive(false);
         setBedroomActive(!bedroomActive)
     }
 
@@ -130,6 +131,9 @@ const SideBar = () => {
         }
         {
             portfolioActive && showingPorfolioSideBar
+        }
+        {
+            !portfolioActive & bathroomActive && showingPorfolioSideBar
         }
         </div>
     )

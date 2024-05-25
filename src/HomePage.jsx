@@ -195,7 +195,7 @@ const HomePage = () => {
                     <>
                     {
                         entry.tag =="bathroom" &&
-                        <div key={index}>
+                        <div className='pictureBox' key={index}>
                         <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
                         <p>
                             {entry.info}
