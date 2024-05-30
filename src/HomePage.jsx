@@ -28,7 +28,7 @@ const HomePage = () => {
     const bath2b = cld.image('bath2b');
     const bath2c = cld.image('bath2c');
 
-    bath1.resize(scale().width(1280).height(720).aspectRatio('1.0'))
+    bath1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
         .overlay(
             source(
                 image('STRUKTURA').transformation(
@@ -43,7 +43,7 @@ const HomePage = () => {
             )
         );
 
-    bath1b.resize(scale().width(1280).height(720).aspectRatio('1.0'))
+    bath1b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
         .overlay(
             source(
                 image('STRUKTURA').transformation(
@@ -59,7 +59,7 @@ const HomePage = () => {
         )
     );
 
-    bath1c.resize(scale().width(1280).height(720).aspectRatio('1.0'))
+    bath1c.resize(scale().width(1280).height(720).aspectRatio("16:9"))
     .overlay(
         source(
             image('STRUKTURA').transformation(
@@ -74,7 +74,7 @@ const HomePage = () => {
     )
 );
 
-    bath2.resize(scale().width(1280).height(720).aspectRatio('1.0'))
+    bath2.resize(scale().width(1280).height(720).aspectRatio("16:9"))
     .overlay(
         source(
             image('STRUKTURA').transformation(
@@ -88,9 +88,9 @@ const HomePage = () => {
     )
 );
 
-    bath2b.resize(scale().width(1280).height(720).aspectRatio('1.0'));
+    bath2b.resize(scale().width(1280).height(720).aspectRatio("16:9"));
 
-    bath2c.resize(scale().width(1280).height(720).aspectRatio('1.0'));
+    bath2c.resize(scale().width(1280).height(720).aspectRatio("16:9"));
 
     // testImg1.format('auto')
     //     .quality('auto')
@@ -155,14 +155,26 @@ const HomePage = () => {
             info: "Texas"
         },
     })
+    const [matchingEntries, setMatchingEntries] = useState([]);
     //FUNCTIONS
     // const screenClick = () => {
     //     setBefore(!before);
     // }
+    const handleInputChange = (event) => {
+        const inputValue = event.target.value.toLowerCase();
+        // Find all entries whose tag matches the input value
+    const matchingEntries = Object.entries(pictures).filter(([key, picture]) => (
+        picture.tag.some(tag => tag.toLowerCase().includes(inputValue))
+    ));
+      // Extract the 'pre' property from matching entries
+    const matchingPreviews = matchingEntries.map(([key, picture]) => picture.pre);
+  
+    setMatchingEntries(matchingPreviews);
+        }
 
     const showingBeforePictures = (
         <div>
-            <input type="text" className="searchBar" placeholder="Search..." />
+            <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
             <div className='homeBoxDaddy' >
                 {pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <div key={index}>
@@ -177,7 +189,7 @@ const HomePage = () => {
 
     const showingBathroom = (
         <div>
-            <input type="text" className="searchBar" placeholder="Search..." />
+            <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
             <div className='homeBoxDaddy'>
                 {pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <>
@@ -198,6 +210,15 @@ const HomePage = () => {
 
     const showingAbout = (
         <div className='homeBoxDaddy'>
+            <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
+            {matchingEntries.length > 0 && 
+                <div>
+                    <p>Matching entries:</p>
+                    {matchingEntries.map((pre, index) => (
+                    <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                    ))}
+                </div>
+            }
             <h1>We Getting Breesh</h1>
         </div>
     )
