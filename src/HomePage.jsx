@@ -711,14 +711,23 @@ const HomePage = () => {
         <div>
             <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
             <div className='homeBoxDaddy' >
-                {pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
+                {matchingEntries.length > 0 ? 
+                    <div>
+                        <p>Matching entries:</p>
+                        {matchingEntries.map((pre, index) => (
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        ))}
+                    </div>
+                :pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <div key={index}>
                         <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
                         <p className='pictureInfo'>
                             {entry.info}
                         </p>
                     </div>
-                ))}
+                ))
+                }
+                
             </div>
         </div>)
 
@@ -726,7 +735,15 @@ const HomePage = () => {
         <div>
             <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
             <div className='homeBoxDaddy'>
-                {pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
+                {matchingEntries.length > 0 ? 
+                    <div>
+                        <p>Matching entries:</p>
+                        {matchingEntries.map((pre, index) => (
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        ))}
+                    </div>
+                :
+                pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <>
                     {
                         entry.tag =="bathroom" &&
@@ -746,15 +763,15 @@ const HomePage = () => {
     const showingAbout = (
         <div className='homeBoxDaddy'>
             <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
-            {matchingEntries.length > 0 && 
-                <div>
-                    <p>Matching entries:</p>
-                    {matchingEntries.map((pre, index) => (
-                    <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
-                    ))}
-                </div>
+            {matchingEntries.length > 0 ? 
+                    <div>
+                        <p>Matching entries:</p>
+                        {matchingEntries.map((pre, index) => (
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        ))}
+                    </div>
+            : <h1> We Getting $</h1>
             }
-            <h1>We Getting Breesh</h1>
         </div>
     )
     
