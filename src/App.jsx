@@ -14,10 +14,13 @@ const [aboutActive, setAboutActive] = useState(false);
 const [kitchenActive, setKitchenActive] = useState(false);
 const [bathroomActive, setBathroomActive] = useState(false);
 const [bedroomActive, setBedroomActive] = useState(false);
+const [indoorActive, setIndoorActive] = useState(false);
+const [outdoorActive, setOutdoorActive] = useState(false);
 
   return (
     <MyStateContext.Provider value ={{ aboutActive, setAboutActive,kitchenActive, setKitchenActive,
-      sideBarActive, setSideBarActive,portfolioActive, setPortfolioActive,bathroomActive, setBathroomActive,bedroomActive, setBedroomActive }}>
+      sideBarActive, setSideBarActive,portfolioActive, setPortfolioActive,bathroomActive, setBathroomActive,bedroomActive, setBedroomActive,
+      indoorActive, setIndoorActive, outdoorActive, setOutdoorActive}}>
       <div>
         <LogoLoader/>
         <SideBar/>

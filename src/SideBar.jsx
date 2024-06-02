@@ -9,7 +9,8 @@ import { MyStateContext } from './App';
 
 const SideBar = () => {
     const {sideBarActive,setSideBarActive, portfolioActive,setPortfolioActive,
-        setAboutActive,aboutActive,kitchenActive,setKitchenActive,setBathroomActive,bathroomActive,bedroomActive,setBedroomActive} = useContext(MyStateContext);
+        setAboutActive,setKitchenActive,kitchenActive, setBathroomActive,bathroomActive,setBedroomActive,
+        bedroomActive, setIndoorActive, indoorActive, setOutdoorActive, outdoorActive} = useContext(MyStateContext);
     
 
     const portfolioClick = () => {
@@ -23,6 +24,8 @@ const SideBar = () => {
         setKitchenActive(false);
         setBedroomActive(false);
         setPortfolioActive(false);
+        setIndoorActive(false);
+        setOutdoorActive(false);
         setSideBarActive(true);
     }
 
@@ -34,6 +37,8 @@ const SideBar = () => {
         setBathroomActive(false);
         setBedroomActive(false);
         setPortfolioActive(false);
+        setIndoorActive(false);
+        setOutdoorActive(false);
         setKitchenActive(true);
     }
 
@@ -41,6 +46,8 @@ const SideBar = () => {
         setKitchenActive(false);
         setBedroomActive(false);
         setPortfolioActive(false);
+        setIndoorActive(false);
+        setOutdoorActive(false);
         setBathroomActive(true);
     }
 
@@ -48,8 +55,29 @@ const SideBar = () => {
         setKitchenActive(false);
         setBathroomActive(false);
         setPortfolioActive(false);
+        setIndoorActive(false);
+        setOutdoorActive(false);
         setBedroomActive(true);
     }
+
+    const indoorClick = () => {
+        setKitchenActive(false);
+        setBathroomActive(false);
+        setPortfolioActive(false);
+        setBedroomActive(false);
+        setOutdoorActive(false);
+        setIndoorActive(true);
+    }
+
+    const outdoorClick = () => {
+        setKitchenActive(false);
+        setBathroomActive(false);
+        setPortfolioActive(false);
+        setBedroomActive(false);
+        setIndoorActive(false);
+        setOutdoorActive(true);
+    }
+
 
     const contactClick = () => {
         window.location.href = "mailto:struktura.reno@gmail.com";
@@ -82,29 +110,22 @@ const SideBar = () => {
             <button className='kitchenIcon sideBarOptions' title="Kitchen" onClick={kitchenClick}>
                 Kitchen
             </button>
-            <button className='sideBarOptions' title="Toilet" onClick={bathroomClick}>
+            <button className='sideBarOptions' title="Bathroom" onClick={bathroomClick}>
                 Bathroom
             </button>
-            <button className='sideBarOptions' title="Bed" onClick={bedroomClick}>
+            <button className='sideBarOptions' title="Bedroom" onClick={bedroomClick}>
                 Bedroom
             </button>
-            <button className='sideBarOptions' title="TV">
-                Others
+            <button className='sideBarOptions' title="Indoor" onClick={indoorClick}>
+                Indoor
+            </button>
+            <button className='sideBarOptions' title="Outdoor" onClick={outdoorClick}>
+                Outdoor
             </button>
             <button className='sideBarMenuButtonOff' onClick={backToMenuClick}>
                 <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
             </button>
         </div>)
-        
-    // const hiddingSideBarCode = (
-    //     <div className='sideBarBoxDaddy'>
-    //         <p className='sideBarLogo'>
-    //             <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
-    //         </p>
-    //         <button className='sideBarMenuButtonOff' >
-    //             <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
-    //         </button>
-    //     </div>)
 
     const showingHomeSideBar = (
         <div className='sideBarBoxDaddy'>
@@ -136,6 +157,18 @@ const SideBar = () => {
         }
         {
             !portfolioActive & bathroomActive && showingPorfolioSideBar
+        }
+        {
+            !portfolioActive & kitchenActive && showingPorfolioSideBar
+        }
+        {
+            !portfolioActive & bedroomActive && showingPorfolioSideBar
+        }
+        {
+            !portfolioActive & indoorActive && showingPorfolioSideBar
+        }
+        {
+            !portfolioActive & outdoorActive && showingPorfolioSideBar
         }
         </div>
     )

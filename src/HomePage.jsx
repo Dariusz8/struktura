@@ -15,7 +15,8 @@ import { MyStateContext } from './App';
 import { indoor } from '@cloudinary/url-gen/qualifiers/improveMode';
 
 const HomePage = () => {
-    const { aboutActive,bathroomActive, portfolioActive } = useContext(MyStateContext);
+    const { aboutActive,bathroomActive, portfolioActive, kitchenActive, bedroomActive, indoorActive,
+        outdoorActive} = useContext(MyStateContext);
     const cld = new Cloudinary({
         cloud: {
           cloudName: 'dly85se71'
@@ -488,30 +489,6 @@ const HomePage = () => {
             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
         )
     );
-
-    // testImg1.format('auto')
-    //     .quality('auto')
-    //     .resize(fill().aspectRatio("1.0"))
-    //     .overlay(
-    //         source(
-    //             text('Before', new TextStyle("Arial", 40))
-    //             )
-    //             .position(new Position().gravity(compass("south_west")).offsetX(50).offsetY(50))
-    //     )
-    //     .overlay(
-    //         source(
-    //             image('STRUKTURA').transformation(
-    //                 new Transformation()
-    //                 .resize(scale().width(150))
-    //                 .adjust(opacity(100))
-    //                 .adjust(replaceColor("white"))
-    //             )
-    //             )
-    //         .position(
-    //             new Position().allowOverflow(false).gravity(compass("south_east"))
-    //         )
-    //     );
-
     //STATES PICS
     //const [before, setBefore] = useState(true);
     const [pictures,setPictures] = useState({
@@ -760,6 +737,122 @@ const HomePage = () => {
         </div>
     )
 
+    const showingKitchen = (
+        <div>
+            <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
+            <div className='homeBoxDaddy'>
+                {matchingEntries.length > 0 ? 
+                    <div>
+                        <p>Matching entries:</p>
+                        {matchingEntries.map((pre, index) => (
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        ))}
+                    </div>
+                :
+                pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
+                    <>
+                    {
+                        entry.tag =="kitchen" &&
+                        <div className='pictureBox' key={index}>
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <p className='pictureInfo'>
+                            {entry.info}
+                        </p>
+                        </div>
+                    }
+                    </>
+                ))}
+            </div>
+        </div>
+    )
+
+    const showingBedroom = (
+        <div>
+            <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
+            <div className='homeBoxDaddy'>
+                {matchingEntries.length > 0 ? 
+                    <div>
+                        <p>Matching entries:</p>
+                        {matchingEntries.map((pre, index) => (
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        ))}
+                    </div>
+                :
+                pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
+                    <>
+                    {
+                        entry.tag =="bedroom" &&
+                        <div className='pictureBox' key={index}>
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <p className='pictureInfo'>
+                            {entry.info}
+                        </p>
+                        </div>
+                    }
+                    </>
+                ))}
+            </div>
+        </div>
+    )
+
+    const showingIndoor = (
+        <div>
+            <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
+            <div className='homeBoxDaddy'>
+                {matchingEntries.length > 0 ? 
+                    <div>
+                        <p>Matching entries:</p>
+                        {matchingEntries.map((pre, index) => (
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        ))}
+                    </div>
+                :
+                pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
+                    <>
+                    {
+                        entry.tag =="indoor" &&
+                        <div className='pictureBox' key={index}>
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <p className='pictureInfo'>
+                            {entry.info}
+                        </p>
+                        </div>
+                    }
+                    </>
+                ))}
+            </div>
+        </div>
+    )
+
+    const showingOutdoor = (
+        <div>
+            <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
+            <div className='homeBoxDaddy'>
+                {matchingEntries.length > 0 ? 
+                    <div>
+                        <p>Matching entries:</p>
+                        {matchingEntries.map((pre, index) => (
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        ))}
+                    </div>
+                :
+                pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
+                    <>
+                    {
+                        entry.tag =="outdoor" &&
+                        <div className='pictureBox' key={index}>
+                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <p className='pictureInfo'>
+                            {entry.info}
+                        </p>
+                        </div>
+                    }
+                    </>
+                ))}
+            </div>
+        </div>
+    )
+
     const showingAbout = (
         <div className='homeBoxDaddy'>
             <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
@@ -782,6 +875,18 @@ const HomePage = () => {
         }
         {
             bathroomActive && showingBathroom
+        }
+        {
+            kitchenActive && showingKitchen
+        }
+        {
+            bedroomActive && showingBedroom
+        }
+        {
+            indoorActive && showingIndoor
+        }
+        {
+            outdoorActive && showingOutdoor
         }
         {
             aboutActive && showingAbout
