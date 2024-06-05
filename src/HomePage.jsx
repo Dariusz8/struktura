@@ -692,15 +692,14 @@ const HomePage = () => {
                     <div>
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        <div className='pictureBox'>
+                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        </div>
                         ))}
                     </div>
                 :pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
-                    <div key={index}>
+                    <div className='pictureBox' key={index}>
                         <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
-                        <p className='pictureInfo'>
-                            {entry.info}
-                        </p>
                     </div>
                 ))
                 }
@@ -716,7 +715,9 @@ const HomePage = () => {
                     <div>
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        <div className='pictureBox'>
+                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        </div>
                         ))}
                     </div>
                 :
@@ -726,9 +727,6 @@ const HomePage = () => {
                         entry.tag =="bathroom" &&
                         <div className='pictureBox' key={index}>
                         <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
-                        <p className='pictureInfo'>
-                            {entry.info}
-                        </p>
                         </div>
                     }
                     </>
@@ -745,7 +743,9 @@ const HomePage = () => {
                     <div>
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        <div className='pictureBox'>
+                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        </div>
                         ))}
                     </div>
                 :
@@ -755,9 +755,6 @@ const HomePage = () => {
                         entry.tag =="kitchen" &&
                         <div className='pictureBox' key={index}>
                         <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
-                        <p className='pictureInfo'>
-                            {entry.info}
-                        </p>
                         </div>
                     }
                     </>
@@ -774,7 +771,9 @@ const HomePage = () => {
                     <div>
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        <div className='pictureBox'>
+                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        </div>
                         ))}
                     </div>
                 :
@@ -784,9 +783,6 @@ const HomePage = () => {
                         entry.tag =="bedroom" &&
                         <div className='pictureBox' key={index}>
                         <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
-                        <p className='pictureInfo'>
-                            {entry.info}
-                        </p>
                         </div>
                     }
                     </>
@@ -803,7 +799,9 @@ const HomePage = () => {
                     <div>
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        <div className='pictureBox'>
+                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        </div>
                         ))}
                     </div>
                 :
@@ -813,9 +811,6 @@ const HomePage = () => {
                         entry.tag =="indoor" &&
                         <div className='pictureBox' key={index}>
                         <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
-                        <p className='pictureInfo'>
-                            {entry.info}
-                        </p>
                         </div>
                     }
                     </>
@@ -832,7 +827,9 @@ const HomePage = () => {
                     <div>
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
+                        <div className='pictureBox'>
                         <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        </div>
                         ))}
                     </div>
                 :
@@ -842,9 +839,6 @@ const HomePage = () => {
                         entry.tag =="outdoor" &&
                         <div className='pictureBox' key={index}>
                         <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
-                        <p className='pictureInfo'>
-                            {entry.info}
-                        </p>
                         </div>
                     }
                     </>
@@ -860,7 +854,9 @@ const HomePage = () => {
                     <div>
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        <div className='pictureBox'>
+                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        </div>
                         ))}
                     </div>
             : <h1> We Getting $</h1>
