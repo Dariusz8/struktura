@@ -146,7 +146,7 @@ const SideBar = () => {
     )
 
     return (
-        <div>
+        <>
         {
             sideBarActive && showingHomeSideBar
         }
@@ -168,7 +168,7 @@ const SideBar = () => {
         {
             !portfolioActive & outdoorActive && showingPorfolioSideBar
         }
-        </div>
+        </>
     )
 }
 

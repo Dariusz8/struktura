@@ -10,12 +10,15 @@
     border-radius: 5%;
     /*border: solid red 5px;*/
 }
-/*putting homeBOxDaddy z index behind takes away the scroll with loader over it */
 
 .pictureBox {
     overflow: auto;
     border-radius: 8%;
     margin-bottom: 10vh;
+    left:18vw;
+    top:10vh;
+    max-width: 80vw;
+    max-height: 80vh;
     /*border: solid red 5px;*/
 }
 

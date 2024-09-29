@@ -667,9 +667,6 @@ const HomePage = () => {
     })
     const [matchingEntries, setMatchingEntries] = useState([]);
     //FUNCTIONS
-    // const screenClick = () => {
-    //     setBefore(!before);
-    // }
     const handleInputChange = (event) => {
         const inputValue = event.target.value.toLowerCase();
         // Find all entries whose tag matches the input value
@@ -686,9 +683,10 @@ const HomePage = () => {
         <div>
             <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
             <div className='homeBoxDaddy' >
+                
                 {matchingEntries.length > 0 ? 
                     <div>
-                        <p>Matching entries:</p>
+                        
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
                             <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
