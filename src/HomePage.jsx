@@ -2,17 +2,15 @@ import './assets/HomePage.css';
 import React, {useState, useContext} from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage, placeholder, lazyload} from '@cloudinary/react';
-import {limitFill, scale, fit, fill, thumbnail, auto} from "@cloudinary/url-gen/actions/resize";
-import { image, text } from '@cloudinary/url-gen/qualifiers/source';
-import { TextStyle } from '@cloudinary/url-gen/qualifiers/textStyle';
+import { scale} from "@cloudinary/url-gen/actions/resize";
+import { image} from '@cloudinary/url-gen/qualifiers/source';
 import { source } from '@cloudinary/url-gen/actions/overlay';
 import { Position } from '@cloudinary/url-gen/qualifiers/position';
-import { compass, focusOn, autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
+import { compass} from '@cloudinary/url-gen/qualifiers/gravity';
 import { opacity, replaceColor } from '@cloudinary/url-gen/actions/adjust';
 import { Transformation } from '@cloudinary/url-gen';
 import { grayscale, colorize } from '@cloudinary/url-gen/actions/effect';
 import { MyStateContext } from './App';
-import { indoor } from '@cloudinary/url-gen/qualifiers/improveMode';
 
 const HomePage = () => {
     const { aboutActive,bathroomActive, portfolioActive, kitchenActive, bedroomActive, indoorActive,
@@ -22,37 +20,37 @@ const HomePage = () => {
           cloudName: 'dly85se71'
         }
     });
-    //NEED  maybe put these pictures elsewhere with all to export from
-    const bath1 = cld.image('bath1');
-    const bath1b = cld.image('bath1b');
-    const bath1c = cld.image('bath1c');
-    const bath2 = cld.image('bath2');
-    const bath2b = cld.image('bath2b');
-    const bath2c = cld.image('bath2c');
-    const bathroom1 = cld.image('bathroom1');
-    const bathroom1b = cld.image('bathroom1b');
-    const bathroom2 = cld.image('bathroom2');
-    const bathroom2b = cld.image('bathroom2b');
-    const outdoor1 = cld.image('outdoor1');
-    const outdoor1b = cld.image('outdoor1b');
+    //NEED  maybe put these pictures elsewhere with all to export from 
+    const bath1 = cld.image('struktura_project/bath1');
+    const bath1b = cld.image('struktura_project/bath1b');
+    const bath1c = cld.image('struktura_project/bath1c');
+    const bath2 = cld.image('struktura_project/bath2');
+    const bath2b = cld.image('struktura_project/bath2b');
+    const bath2c = cld.image('struktura_project/bath2c');
+    const bathroom1 = cld.image('struktura_project/bathroom1');
+    const bathroom1b = cld.image('struktura_project/bathroom1b');
+    const bathroom2 = cld.image('struktura_project/bathroom2');
+    const bathroom2b = cld.image('struktura_project/bathroom2b');
+    const outdoor1 = cld.image('struktura_project/outdoor1');
+    const outdoor1b = cld.image('struktura_project/outdoor1b');
 
-    const indoor1 = cld.image('indoor1');
-    const indoor2 = cld.image('indoor2');
-    const indoor3 = cld.image('indoor3');
-    const indoor4 = cld.image('indoor4');
-    const indoor5 = cld.image('indoor5');
-    const indoor6 = cld.image('indoor6');
-    const indoor7 = cld.image('indoor7');
-    const indoor7b = cld.image('indoor7b');
-    const indoor8 = cld.image('indoor8');
-    const indoor9 = cld.image('indoor9');
-    const closet1 = cld.image('closet1');
-    const closet2 = cld.image('closet2');
-    const bedroom1 = cld.image('bedroom1');
-    const bedroom2 = cld.image('bedroom2');
-    const kitchen1 = cld.image('kitchen1');
-    const kitchen1b = cld.image('kitchen1b');
-    const kitchen1c = cld.image('kitchen1c');
+    const indoor1 = cld.image('struktura_project/indoor1');
+    const indoor2 = cld.image('struktura_project/indoor2');
+    const indoor3 = cld.image('struktura_project/indoor3');
+    const indoor4 = cld.image('struktura_project/indoor4');
+    const indoor5 = cld.image('struktura_project/indoor5');
+    const indoor6 = cld.image('struktura_project/indoor6');
+    const indoor7 = cld.image('struktura_project/indoor7');
+    const indoor7b = cld.image('struktura_project/indoor7b');
+    const indoor8 = cld.image('struktura_project/indoor8');
+    const indoor9 = cld.image('struktura_project/indoor9');
+    const closet1 = cld.image('struktura_project/closet');
+    const closet2 = cld.image('struktura_project/closet2');
+    const bedroom1 = cld.image('struktura_project/bedroom1');
+    const bedroom2 = cld.image('struktura_project/bedroom2');
+    const kitchen1 = cld.image('struktura_project/kitchen1');
+    const kitchen1b = cld.image('struktura_project/kitchen1b');
+    const kitchen1c = cld.image('struktura_project/kitchen1c');
     
 
     bathroom1.resize(scale().width(1280).height(720).aspectRatio("16:9"))

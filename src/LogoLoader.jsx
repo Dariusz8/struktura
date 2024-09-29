@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './assets/LogoLoader.css';
 import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage} from '@cloudinary/react';
-import {limitFill, scale} from "@cloudinary/url-gen/actions/resize";
+import { scale} from "@cloudinary/url-gen/actions/resize";
 
 //use a seen signal from app so only show this once on first connect 
 const LogoLoader = () => {
@@ -14,10 +14,10 @@ const LogoLoader = () => {
     }
   });
 
-  const myImage1 = cld.image('STRUKTURA1');
-  const myImage2 = cld.image('STRUKTURA2');
-  const myImage3 = cld.image('STRUKTURA3');
-  const myImage4 = cld.image('STRUKTURA4');
+  const myImage1 = cld.image('struktura_project/STRUKTURA1.png');
+  const myImage2 = cld.image('struktura_project/STRUKTURA2.png');
+  const myImage3 = cld.image('struktura_project/STRUKTURA3.png');
+  const myImage4 = cld.image('struktura_project/STRUKTURA4.png');
   
   myImage1.format('auto')
     .quality('auto')

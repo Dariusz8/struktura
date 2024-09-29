@@ -1,10 +1,8 @@
 import './assets/SideBar.css';
 import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage} from '@cloudinary/react';
-import {limitFill, scale} from "@cloudinary/url-gen/actions/resize";
-import React, {useState, useContext} from 'react';
-import { format } from '@cloudinary/url-gen/actions/delivery';
-import { auto } from '@cloudinary/url-gen/qualifiers/format';
+import {scale} from "@cloudinary/url-gen/actions/resize";
+import React, { useContext} from 'react';
 import { MyStateContext } from './App';
 
 const SideBar = () => {
@@ -89,8 +87,8 @@ const SideBar = () => {
         }
     });
 //cloudinary pictures being taken
-    const logoImg = cld.image('STRUKTURA');
-    const sideBarMenu = cld.image('STRUKTURA1');
+    const logoImg = cld.image('struktura_project/STRUKTURA.png');
+    const sideBarMenu = cld.image('struktura_project/STRUKTURA1.png');
 
   //use cloudinary sdk to have image in ready format
     logoImg.format('auto')
