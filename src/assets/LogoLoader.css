@@ -1,15 +1,15 @@
 .logoParent {
-    place-content: center;
-    width: fit-content;
-    height: fit-content;
     display: grid;
+    justify-content: center;
+    align-content: center;
+    max-width: 85vw;
+    max-height: 85vh;
     grid-template-areas:
     "p1 p2 p3"
     "name name name";
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-column-gap: 3vw;
-    grid-row-gap: 0;
+    /* gap: 2vw 0; */
     box-sizing:border-box;
     margin-inline: auto;
     background-color: transparent;

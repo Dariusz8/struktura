@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './assets/LogoLoader.css';
 import { Cloudinary } from '@cloudinary/url-gen';
-import {AdvancedImage} from '@cloudinary/react';
-import { scale} from "@cloudinary/url-gen/actions/resize";
+import {AdvancedImage, placeholder, lazyload, accessibility, responsive} from '@cloudinary/react';
 
-//use a seen signal from app so only show this once on first connect 
+
 const LogoLoader = () => {
   const [isVisible, setIsVisible] = useState(false);
   //create and configure to my cloudinary instance
@@ -19,21 +18,21 @@ const LogoLoader = () => {
   const myImage3 = cld.image('struktura_project/STRUKTURA3.png');
   const myImage4 = cld.image('struktura_project/STRUKTURA4.png');
   
-  myImage1.format('auto')
-    .quality('auto')
-    .resize(scale().width(0.7).regionRelative());
+  // myImage1
+  // .delivery(format(auto()))
+  // .resize(scale().width('auto').relative());
 
-  myImage2.format('auto')
-    .quality('auto')
-    .resize(scale().width(0.7).regionRelative());
+  // myImage2
+  // .delivery(format(auto()))
+  // .resize(scale().width('auto').relative());
 
-  myImage3.format('auto')
-    .quality('auto')
-    .resize(scale().width(0.7).regionRelative());
+  // myImage3
+  // .delivery(format(auto()))
+  // .resize(scale().width('auto').relative());
 
-  myImage4.format('auto')
-    .quality('auto')
-    .resize(scale().width(0.7).regionRelative());
+  // myImage4
+  // .delivery(format(auto()))
+  // .resize(scale().width('auto').relative());
 
   useEffect(() => {
     const fadeInDelay = 1000;
@@ -59,16 +58,16 @@ const LogoLoader = () => {
     return (
       <div className='logoParent'>
         <p className='p1' alt="First Part of Struktura Logo" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s' }}>
-        <AdvancedImage cldImg={myImage1} />
+        <AdvancedImage cldImg={myImage1} plugins={[responsive({steps: [200,400,600,800, 1000,1400]}), placeholder()]} />
         </p>
         <p className='p2' alt="Second Part of Struktura Logo" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 1s' }}>
-          <AdvancedImage cldImg={myImage2} />
+          <AdvancedImage cldImg={myImage2} plugins={[responsive({steps: [200,400,600,800, 1000,1400]}, placeholder())]} />
         </p>
         <p className='p3' alt="Third Part of Struktura Logo" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 2s' }}>
-          <AdvancedImage cldImg={myImage3} />
+          <AdvancedImage cldImg={myImage3} plugins={[responsive({steps: [200,400,600,800, 1000,1400]}), placeholder()]} />
         </p>
         <p className='logoName' alt="Struktura in Company" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 3s' }}>
-          <AdvancedImage cldImg={myImage4} />
+          <AdvancedImage cldImg={myImage4} plugins={[responsive({steps: [200,400,600,800, 1000,1400]}), placeholder()]} />
         </p>
       </div>
     );

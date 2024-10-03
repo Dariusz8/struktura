@@ -1,7 +1,7 @@
 import './assets/HomePage.css';
 import React, {useState, useContext} from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
-import {AdvancedImage, placeholder, lazyload} from '@cloudinary/react';
+import {AdvancedImage, placeholder, lazyload, accessibility, responsive} from '@cloudinary/react';
 import { scale} from "@cloudinary/url-gen/actions/resize";
 import { image} from '@cloudinary/url-gen/qualifiers/source';
 import { source } from '@cloudinary/url-gen/actions/overlay';
@@ -53,440 +53,440 @@ const HomePage = () => {
     const kitchen1c = cld.image('struktura_project/kitchen1c');
     
 
-    bathroom1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     bathroom1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    bathroom1b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     bathroom1b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    bathroom2.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     bathroom2.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    bathroom2b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     bathroom2b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    bath1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-        .overlay(
-            source(
-                image('STRUKTURA').transformation(
-                    new Transformation()
-                    .resize(scale().width(150))
-                    .adjust(opacity(100))
-                    .adjust(replaceColor("white"))
-                )
-            )
-            .position(
-                new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-            )
-        );
+//     bath1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//         .overlay(
+//             source(
+//                 image('STRUKTURA').transformation(
+//                     new Transformation()
+//                     .resize(scale().width(150))
+//                     .adjust(opacity(100))
+//                     .adjust(replaceColor("white"))
+//                 )
+//             )
+//             .position(
+//                 new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//             )
+//         );
 
-    bath1b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-        .overlay(
-            source(
-                image('STRUKTURA').transformation(
-                    new Transformation()
-                    .resize(scale().width(150))
-                    .adjust(opacity(100))
-                    .effect(colorize()
-                    .color('white')
-                    ))
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     bath1b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//         .overlay(
+//             source(
+//                 image('STRUKTURA').transformation(
+//                     new Transformation()
+//                     .resize(scale().width(150))
+//                     .adjust(opacity(100))
+//                     .effect(colorize()
+//                     .color('white')
+//                     ))
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    bath1c.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .effect(grayscale())
-                )
-    )
-    .position(
-        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-    )
-);
+//     bath1c.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .effect(grayscale())
+//                 )
+//     )
+//     .position(
+//         new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//     )
+// );
 
-    bath2.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(30))
-                )
-    )
-    .position(
-        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-    )
-);
+//     bath2.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(30))
+//                 )
+//     )
+//     .position(
+//         new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//     )
+// );
 
-    bath2b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     bath2b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    bath2c.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     bath2c.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    outdoor1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     outdoor1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    outdoor1b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     outdoor1b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    indoor1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     indoor1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    indoor2.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     indoor2.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    indoor3.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     indoor3.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    indoor4.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     indoor4.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    indoor5.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     indoor5.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    indoor6.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     indoor6.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    indoor7.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     indoor7.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    indoor7b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     indoor7b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    indoor8.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     indoor8.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    indoor9.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     indoor9.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    closet1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     closet1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    closet2.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     closet2.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    bedroom1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     bedroom1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    bedroom2.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     bedroom2.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    kitchen1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     kitchen1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    kitchen1b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     kitchen1b.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
 
-    kitchen1c.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-    .overlay(
-        source(
-            image('STRUKTURA').transformation(
-                new Transformation()
-                .resize(scale().width(150))
-                .adjust(opacity(100))
-                .adjust(replaceColor("white"))
-            )
-        )
-        .position(
-            new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-        )
-    );
+//     kitchen1c.resize(scale().width(1280).height(720).aspectRatio("16:9"))
+//     .overlay(
+//         source(
+//             image('STRUKTURA').transformation(
+//                 new Transformation()
+//                 .resize(scale().width(150))
+//                 .adjust(opacity(100))
+//                 .adjust(replaceColor("white"))
+//             )
+//         )
+//         .position(
+//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+//         )
+//     );
     //STATES PICS
     //const [before, setBefore] = useState(true);
     const [pictures,setPictures] = useState({
@@ -689,13 +689,13 @@ const HomePage = () => {
                         
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
                 :pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
                     </div>
                 ))
                 }
@@ -712,7 +712,7 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -722,7 +722,7 @@ const HomePage = () => {
                     {
                         entry.tag =="bathroom" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -740,7 +740,7 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -750,7 +750,7 @@ const HomePage = () => {
                     {
                         entry.tag =="kitchen" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -768,7 +768,7 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -778,7 +778,7 @@ const HomePage = () => {
                     {
                         entry.tag =="bedroom" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -796,7 +796,7 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -806,7 +806,7 @@ const HomePage = () => {
                     {
                         entry.tag =="indoor" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -824,7 +824,7 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -834,7 +834,7 @@ const HomePage = () => {
                     {
                         entry.tag =="outdoor" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -851,7 +851,7 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
                         </div>
                         ))}
                     </div>

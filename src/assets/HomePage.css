@@ -1,4 +1,5 @@
 .homeBoxDaddy {
+    box-sizing:border-box;
     margin-top: 2vh;
     position: fixed;
     left:18vw;
