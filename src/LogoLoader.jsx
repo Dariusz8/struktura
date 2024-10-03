@@ -17,22 +17,6 @@ const LogoLoader = () => {
   const myImage2 = cld.image('struktura_project/STRUKTURA2.png');
   const myImage3 = cld.image('struktura_project/STRUKTURA3.png');
   const myImage4 = cld.image('struktura_project/STRUKTURA4.png');
-  
-  // myImage1
-  // .delivery(format(auto()))
-  // .resize(scale().width('auto').relative());
-
-  // myImage2
-  // .delivery(format(auto()))
-  // .resize(scale().width('auto').relative());
-
-  // myImage3
-  // .delivery(format(auto()))
-  // .resize(scale().width('auto').relative());
-
-  // myImage4
-  // .delivery(format(auto()))
-  // .resize(scale().width('auto').relative());
 
   useEffect(() => {
     const fadeInDelay = 1000;
