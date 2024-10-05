@@ -1,8 +1,10 @@
 import './assets/HomePage.css';
 import React, {useState, useContext} from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
-import {AdvancedImage, placeholder, lazyload, accessibility, responsive} from '@cloudinary/react';
+import {AdvancedImage, placeholder, lazyload, responsive} from '@cloudinary/react';
 import { MyStateContext } from './App';
+import { quality } from "@cloudinary/url-gen/actions/delivery";
+import { auto } from "@cloudinary/url-gen/qualifiers/quality";
 
 const HomePage = () => {
     const { aboutActive,bathroomActive, portfolioActive, kitchenActive, bedroomActive, indoorActive,
@@ -44,6 +46,37 @@ const HomePage = () => {
     const kitchen1b = cld.image('struktura_project/kitchen1b');
     const kitchen1c = cld.image('struktura_project/kitchen1c');
     
+//PICTURE MODIFICATION 
+bath1.delivery(quality(auto())); 
+bath1b.delivery(quality(auto())); 
+bath1c.delivery(quality(auto())); 
+bath2.delivery(quality(auto())); 
+bath2b.delivery(quality(auto())); 
+bath2c.delivery(quality(auto())); 
+bathroom1.delivery(quality(auto()));
+bathroom1b.delivery(quality(auto()));
+bathroom2.delivery(quality(auto()));
+bathroom2b.delivery(quality(auto()));
+outdoor1.delivery(quality(auto()));
+outdoor1b.delivery(quality(auto()));
+indoor1.delivery(quality(auto()));
+indoor2.delivery(quality(auto()));
+indoor3.delivery(quality(auto()));
+indoor4.delivery(quality(auto()));
+indoor5.delivery(quality(auto()));
+indoor6.delivery(quality(auto()));
+indoor7.delivery(quality(auto()));
+indoor7b.delivery(quality(auto()));
+indoor8.delivery(quality(auto()));
+indoor9.delivery(quality(auto()));
+closet1.delivery(quality(auto()));
+closet2.delivery(quality(auto()));
+bedroom1.delivery(quality(auto()));
+bedroom2.delivery(quality(auto()));
+kitchen1.delivery(quality(auto()));
+kitchen1b.delivery(quality(auto()));
+kitchen1c.delivery(quality(auto()));
+
 
 //     bathroom1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
 //     .overlay(
@@ -255,19 +288,18 @@ const HomePage = () => {
         <div>
             <input onChange={handleInputChange} type="text" className="searchBar" placeholder="Search..." />
             <div className='homeBoxDaddy' >
-                
                 {matchingEntries.length > 0 ? 
                     <div>
-                        
+                        <p>Matching Entries</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
                 :pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                     </div>
                 ))
                 }
@@ -284,7 +316,7 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -294,7 +326,7 @@ const HomePage = () => {
                     {
                         entry.tag =="bathroom" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -312,7 +344,7 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -322,7 +354,7 @@ const HomePage = () => {
                     {
                         entry.tag =="kitchen" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -340,7 +372,7 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -350,7 +382,7 @@ const HomePage = () => {
                     {
                         entry.tag =="bedroom" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -368,7 +400,7 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -378,7 +410,7 @@ const HomePage = () => {
                     {
                         entry.tag =="indoor" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -396,7 +428,7 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                        <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -406,7 +438,7 @@ const HomePage = () => {
                     {
                         entry.tag =="outdoor" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={entry.pre} />
+                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -423,11 +455,11 @@ const HomePage = () => {
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive({steps: [200,400,600,800, 1000,1400]}), accessibility(), placeholder({mode: 'blur'})]} cldImg={pre} />
+                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
-            : <h1> We Getting $</h1>
+            : <h1> We Are Here To Bring Withstanding Structure</h1>
             }
         </div>
     )

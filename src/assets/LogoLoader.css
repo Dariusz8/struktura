@@ -2,14 +2,14 @@
     display: grid;
     justify-content: center;
     align-content: center;
-    max-width: 85vw;
-    max-height: 85vh;
+    max-width: 80vw;
+    max-height: 80vh;
     grid-template-areas:
     "p1 p2 p3"
     "name name name";
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    /* gap: 2vw 0; */
+     gap: 1vw 0; 
     box-sizing:border-box;
     margin-inline: auto;
     background-color: transparent;

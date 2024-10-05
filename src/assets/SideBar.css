@@ -6,7 +6,7 @@
     justify-content: space-evenly;
     align-content: center;
     position: fixed;
-    left: 10px;
+    left: 1vw;
     top:1vh;
     box-sizing: border-box;
     text-align: center;
@@ -18,8 +18,8 @@
 }
 
 .sideBarLogo {
-    max-width: 10vh;
-    max-height: 10vh;
+    max-width: 8vh;
+    max-height: 8vh;
 }
 
 .tvIcon {

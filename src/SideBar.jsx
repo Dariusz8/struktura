@@ -1,9 +1,11 @@
 import './assets/SideBar.css';
 import { Cloudinary } from '@cloudinary/url-gen';
-import {AdvancedImage} from '@cloudinary/react';
+import {AdvancedImage, responsive} from '@cloudinary/react';
 import {scale} from "@cloudinary/url-gen/actions/resize";
 import React, { useContext} from 'react';
 import { MyStateContext } from './App';
+import { quality, format } from "@cloudinary/url-gen/actions/delivery";
+import { auto } from "@cloudinary/url-gen/qualifiers/quality";
 
 const SideBar = () => {
     const {sideBarActive,setSideBarActive, portfolioActive,setPortfolioActive,
@@ -91,19 +93,17 @@ const SideBar = () => {
     const sideBarMenu = cld.image('struktura_project/STRUKTURA1.png');
 
   //use cloudinary sdk to have image in ready format
-    logoImg.format('auto')
-        .quality('auto')
-        .resize(scale().width(0.10).regionRelative());
+    logoImg.delivery(quality(auto()))
+        .resize(scale().width(0.08).regionRelative());
 
-    sideBarMenu.format('auto')
-        .quality('auto')
+    sideBarMenu.delivery(quality(auto()))
         .resize(scale().width(0.065).regionRelative());
 
 
     const showingPorfolioSideBar = (
         <div className='sideBarBoxDaddy'>
             <p className='sideBarLogo'>
-                <AdvancedImage cldImg={logoImg} alt="Small Struktura Company Logo" />
+                <AdvancedImage cldImg={logoImg} plugins={[responsive()]} alt="Small Struktura Company Logo" />
             </p>
             <button className='kitchenIcon sideBarOptions' title="Kitchen" onClick={kitchenClick}>
                 Kitchen
@@ -121,7 +121,7 @@ const SideBar = () => {
                 Outdoor
             </button>
             <button className='sideBarMenuButtonOff' onClick={backToMenuClick}>
-                <AdvancedImage cldImg={sideBarMenu} alt="Arrow Button For Sidebar Menu" />
+                <AdvancedImage cldImg={sideBarMenu} plugins={[responsive()]} alt="Arrow Button For Sidebar Menu" />
             </button>
         </div>)
 
