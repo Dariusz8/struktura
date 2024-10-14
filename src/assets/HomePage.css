@@ -7,17 +7,23 @@
     max-width: 80vw;
     max-height: 80vh;
     overflow-y: scroll;
-    overflow-x:auto;
+    scroll-behavior: smooth;
+    /* overflow-x:auto; */
     border-radius: 5%;
     /*border: solid red 5px;*/
 }
 
 .pictureBox {
-    overflow: auto;
     border-radius: 8%;
     margin-bottom: 6vh;
 }
 
+.pictureStyle {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 10%;
+    min-width: 0;
+}
 .pictureInfo{
     text-align: center;
 }

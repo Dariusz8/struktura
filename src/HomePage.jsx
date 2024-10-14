@@ -47,35 +47,35 @@ const HomePage = () => {
     const kitchen1c = cld.image('struktura_project/kitchen1c');
     
 //PICTURE MODIFICATION 
-bath1.delivery(quality(auto())); 
-bath1b.delivery(quality(auto())); 
-bath1c.delivery(quality(auto())); 
-bath2.delivery(quality(auto())); 
-bath2b.delivery(quality(auto())); 
-bath2c.delivery(quality(auto())); 
-bathroom1.delivery(quality(auto()));
-bathroom1b.delivery(quality(auto()));
-bathroom2.delivery(quality(auto()));
-bathroom2b.delivery(quality(auto()));
-outdoor1.delivery(quality(auto()));
-outdoor1b.delivery(quality(auto()));
-indoor1.delivery(quality(auto()));
-indoor2.delivery(quality(auto()));
-indoor3.delivery(quality(auto()));
-indoor4.delivery(quality(auto()));
-indoor5.delivery(quality(auto()));
-indoor6.delivery(quality(auto()));
-indoor7.delivery(quality(auto()));
-indoor7b.delivery(quality(auto()));
-indoor8.delivery(quality(auto()));
-indoor9.delivery(quality(auto()));
-closet1.delivery(quality(auto()));
-closet2.delivery(quality(auto()));
-bedroom1.delivery(quality(auto()));
-bedroom2.delivery(quality(auto()));
-kitchen1.delivery(quality(auto()));
-kitchen1b.delivery(quality(auto()));
-kitchen1c.delivery(quality(auto()));
+// bath1.delivery(quality(auto())); 
+// bath1b.delivery(quality(auto())); 
+// bath1c.delivery(quality(auto())); 
+// bath2.delivery(quality(auto())); 
+// bath2b.delivery(quality(auto())); 
+// bath2c.delivery(quality(auto())); 
+// bathroom1.delivery(quality(auto()));
+// bathroom1b.delivery(quality(auto()));
+// bathroom2.delivery(quality(auto()));
+// bathroom2b.delivery(quality(auto()));
+// outdoor1.delivery(quality(auto()));
+// outdoor1b.delivery(quality(auto()));
+// indoor1.delivery(quality(auto()));
+// indoor2.delivery(quality(auto()));
+// indoor3.delivery(quality(auto()));
+// indoor4.delivery(quality(auto()));
+// indoor5.delivery(quality(auto()));
+// indoor6.delivery(quality(auto()));
+// indoor7.delivery(quality(auto()));
+// indoor7b.delivery(quality(auto()));
+// indoor8.delivery(quality(auto()));
+// indoor9.delivery(quality(auto()));
+// closet1.delivery(quality(auto()));
+// closet2.delivery(quality(auto()));
+// bedroom1.delivery(quality(auto()));
+// bedroom2.delivery(quality(auto()));
+// kitchen1.delivery(quality(auto()));
+// kitchen1b.delivery(quality(auto()));
+// kitchen1c.delivery(quality(auto()));
 
 
 //     bathroom1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
@@ -293,13 +293,13 @@ kitchen1c.delivery(quality(auto()));
                         <p>Matching Entries</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
+                            <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
                 :pictures && typeof pictures === 'object' && Object.values(pictures).map((entry, index) => (
                     <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
+                        <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                     </div>
                 ))
                 }
@@ -316,7 +316,7 @@ kitchen1c.delivery(quality(auto()));
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
+                            <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -326,7 +326,7 @@ kitchen1c.delivery(quality(auto()));
                     {
                         entry.tag =="bathroom" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
+                        <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -344,7 +344,7 @@ kitchen1c.delivery(quality(auto()));
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
+                            <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -354,7 +354,7 @@ kitchen1c.delivery(quality(auto()));
                     {
                         entry.tag =="kitchen" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
+                        <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -372,7 +372,7 @@ kitchen1c.delivery(quality(auto()));
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
+                            <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -382,7 +382,7 @@ kitchen1c.delivery(quality(auto()));
                     {
                         entry.tag =="bedroom" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
+                        <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -400,7 +400,7 @@ kitchen1c.delivery(quality(auto()));
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
+                            <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -410,7 +410,7 @@ kitchen1c.delivery(quality(auto()));
                     {
                         entry.tag =="indoor" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
+                        <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -428,7 +428,7 @@ kitchen1c.delivery(quality(auto()));
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
+                        <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
@@ -438,7 +438,7 @@ kitchen1c.delivery(quality(auto()));
                     {
                         entry.tag =="outdoor" &&
                         <div className='pictureBox' key={index}>
-                        <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
+                        <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={entry.pre} />
                         </div>
                     }
                     </>
@@ -455,7 +455,7 @@ kitchen1c.delivery(quality(auto()));
                         <p>Matching entries:</p>
                         {matchingEntries.map((pre, index) => (
                         <div className='pictureBox'>
-                            <AdvancedImage plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
+                            <AdvancedImage className="pictureStyle" plugins={[lazyload(), responsive(), placeholder()]} cldImg={pre} />
                         </div>
                         ))}
                     </div>
