@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './assets/LogoLoader.css';
 import { Cloudinary } from '@cloudinary/url-gen';
-import {AdvancedImage, placeholder, lazyload, accessibility, responsive} from '@cloudinary/react';
+import {AdvancedImage, responsive} from '@cloudinary/react';
 import { quality } from "@cloudinary/url-gen/actions/delivery";
 import { auto } from "@cloudinary/url-gen/qualifiers/quality";
-import {scale} from "@cloudinary/url-gen/actions/resize";
 
 const LogoLoader = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,13 +19,13 @@ const LogoLoader = () => {
   const myImage3 = cld.image('struktura_project/STRUKTURA3.png');
   const myImage4 = cld.image('struktura_project/STRUKTURA4.png');
 
-  myImage1.delivery(quality(auto()));
+  // myImage1.delivery(quality(auto()));
 
-  myImage2.delivery(quality(auto()));
+  // myImage2.delivery(quality(auto()));
 
-  myImage3.delivery(quality(auto()));
+  // myImage3.delivery(quality(auto()));
 
-  myImage4.delivery(quality(auto()));
+  // myImage4.delivery(quality(auto()));
 
   useEffect(() => {
     const fadeInDelay = 1000;
@@ -52,16 +51,16 @@ const LogoLoader = () => {
     return (
       <div className='logoParent'>
         <p className='p1' alt="First Part of Struktura Logo" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s' }}>
-        <AdvancedImage cldImg={myImage1} plugins={[responsive(), placeholder()]} />
+        <AdvancedImage cldImg={myImage1} plugins={[responsive()]} />
         </p>
         <p className='p2' alt="Second Part of Struktura Logo" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 1s' }}>
-          <AdvancedImage cldImg={myImage2} plugins={[responsive(), placeholder()]} />
+          <AdvancedImage cldImg={myImage2} plugins={[responsive()]} />
         </p>
         <p className='p3' alt="Third Part of Struktura Logo" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 2s' }}>
-          <AdvancedImage cldImg={myImage3} plugins={[responsive(), placeholder()]} />
+          <AdvancedImage cldImg={myImage3} plugins={[responsive()]} />
         </p>
         <p className='logoName' alt="Struktura in Company" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.5s 3s' }}>
-          <AdvancedImage cldImg={myImage4} plugins={[responsive(), placeholder()]} />
+          <AdvancedImage cldImg={myImage4} plugins={[responsive()]} />
         </p>
       </div>
     );

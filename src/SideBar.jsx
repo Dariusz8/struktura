@@ -4,7 +4,7 @@ import {AdvancedImage, responsive} from '@cloudinary/react';
 import {scale} from "@cloudinary/url-gen/actions/resize";
 import React, { useContext} from 'react';
 import { MyStateContext } from './App';
-import { quality, format } from "@cloudinary/url-gen/actions/delivery";
+import { quality} from "@cloudinary/url-gen/actions/delivery";
 import { auto } from "@cloudinary/url-gen/qualifiers/quality";
 
 const SideBar = () => {

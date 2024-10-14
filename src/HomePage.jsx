@@ -3,8 +3,13 @@ import React, {useState, useContext} from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
 import {AdvancedImage, placeholder, lazyload, responsive} from '@cloudinary/react';
 import { MyStateContext } from './App';
-import { quality } from "@cloudinary/url-gen/actions/delivery";
-import { auto } from "@cloudinary/url-gen/qualifiers/quality";
+import { opacity, replaceColor } from '@cloudinary/url-gen/actions/adjust';
+import { Position } from '@cloudinary/url-gen/qualifiers/position';
+import { source } from '@cloudinary/url-gen/actions/overlay';
+import { image } from '@cloudinary/url-gen/qualifiers/source';
+import { scale } from '@cloudinary/url-gen/actions/resize';
+import { compass} from '@cloudinary/url-gen/qualifiers/gravity';
+import { Transformation } from '@cloudinary/url-gen';
 
 const HomePage = () => {
     const { aboutActive,bathroomActive, portfolioActive, kitchenActive, bedroomActive, indoorActive,
@@ -47,51 +52,386 @@ const HomePage = () => {
     const kitchen1c = cld.image('struktura_project/kitchen1c');
     
 //PICTURE MODIFICATION 
-// bath1.delivery(quality(auto())); 
-// bath1b.delivery(quality(auto())); 
-// bath1c.delivery(quality(auto())); 
-// bath2.delivery(quality(auto())); 
-// bath2b.delivery(quality(auto())); 
-// bath2c.delivery(quality(auto())); 
-// bathroom1.delivery(quality(auto()));
-// bathroom1b.delivery(quality(auto()));
-// bathroom2.delivery(quality(auto()));
-// bathroom2b.delivery(quality(auto()));
-// outdoor1.delivery(quality(auto()));
-// outdoor1b.delivery(quality(auto()));
-// indoor1.delivery(quality(auto()));
-// indoor2.delivery(quality(auto()));
-// indoor3.delivery(quality(auto()));
-// indoor4.delivery(quality(auto()));
-// indoor5.delivery(quality(auto()));
-// indoor6.delivery(quality(auto()));
-// indoor7.delivery(quality(auto()));
-// indoor7b.delivery(quality(auto()));
-// indoor8.delivery(quality(auto()));
-// indoor9.delivery(quality(auto()));
-// closet1.delivery(quality(auto()));
-// closet2.delivery(quality(auto()));
-// bedroom1.delivery(quality(auto()));
-// bedroom2.delivery(quality(auto()));
-// kitchen1.delivery(quality(auto()));
-// kitchen1b.delivery(quality(auto()));
-// kitchen1c.delivery(quality(auto()));
+bath1.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+bath1b.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+bath1c.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+bath2.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+);  
+bath2b.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+);  
+bath2c.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+bathroom1.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+bathroom1b.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+bathroom2.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+bathroom2b.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+outdoor1.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+outdoor1b.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+indoor1.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+indoor2.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+indoor3.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+indoor4.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+indoor5.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+indoor6.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+indoor7.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+indoor7b.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+indoor8.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+indoor9.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+closet1.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+closet2.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+bedroom1.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+bedroom2.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+kitchen1.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+kitchen1b.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
+kitchen1c.overlay(
+    source(
+        image('struktura_project/STRUKTURA.png').transformation(
+            new Transformation()
+            .resize(scale().width(250))
+            .adjust(opacity(100))
+            .adjust(replaceColor("white"))
+        )
+    )
+    .position(
+        new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
+    )
+); 
 
 
-//     bathroom1.resize(scale().width(1280).height(720).aspectRatio("16:9"))
-//     .overlay(
-//         source(
-//             image('STRUKTURA').transformation(
-//                 new Transformation()
-//                 .resize(scale().width(150))
-//                 .adjust(opacity(100))
-//                 .adjust(replaceColor("white"))
-//             )
-//         )
-//         .position(
-//             new Position().allowOverflow(false).gravity(compass("south_east")).offsetY(50).offsetX(120)
-//         )
-//     );
+
     //STATES PICS
     //const [before, setBefore] = useState(true);
     const [pictures,setPictures] = useState({
