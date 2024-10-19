@@ -799,7 +799,12 @@ kitchen1c.overlay(
                         </div>
                         ))}
                     </div>
-            : <h1> We Are Here To Bring Withstanding Structure</h1>
+            :
+            <>
+                <h2>Here To Bring Structure</h2>
+                <p>With over 20 years of experience in home renovation and remodeling, primarily serving the Montreal region, we bring unmatched craftsmanship and expertise to every project. From small home updates to large-scale renovations, we’ve built a reputation for transforming spaces with precision and care.</p>
+                <p>Over the years, our work has resulted in lasting relationships with clients across Montreal, many of whom have trusted us with multiple projects or referred us to others. We take pride in delivering results that consistently exceed expectations.</p>
+            </>
             }
         </div>
     )
