@@ -13,7 +13,7 @@ import { Transformation } from '@cloudinary/url-gen';
 
 const HomePage = () => {
     const { aboutActive,bathroomActive, portfolioActive, kitchenActive, bedroomActive, indoorActive,
-        outdoorActive} = useContext(MyStateContext);
+        outdoorActive, englishActive, setEnglishActive} = useContext(MyStateContext);
     const cld = new Cloudinary({
         cloud: {
           cloudName: 'dly85se71'
@@ -430,8 +430,6 @@ kitchen1c.overlay(
     )
 ); 
 
-
-
     //STATES PICS
     //const [before, setBefore] = useState(true);
     const [pictures,setPictures] = useState({
@@ -610,7 +608,9 @@ kitchen1c.overlay(
             info: "Texas"
         },
     })
+
     const [matchingEntries, setMatchingEntries] = useState([]);
+
     //FUNCTIONS
     const handleInputChange = (event) => {
         const inputValue = event.target.value.toLowerCase();
@@ -623,6 +623,10 @@ kitchen1c.overlay(
   
     setMatchingEntries(matchingPreviews);
         }
+    
+    const handleLangClick = () => {
+        setEnglishActive(prevState => !prevState)
+    }
 
     const showingBeforePictures = (
         <div>
@@ -801,9 +805,28 @@ kitchen1c.overlay(
                     </div>
             :
             <>
+            {
+                englishActive &&
+                <>
                 <h2>Here To Bring Structure</h2>
                 <p>With over 20 years of experience in home renovation and remodeling, primarily serving the Montreal region, we bring unmatched craftsmanship and expertise to every project. From small home updates to large-scale renovations, we’ve built a reputation for transforming spaces with precision and care.</p>
                 <p>Over the years, our work has resulted in lasting relationships with clients across Montreal, many of whom have trusted us with multiple projects or referred us to others. We take pride in delivering results that consistently exceed expectations.</p>
+                <button onClick={handleLangClick}>
+                    Fr
+                </button>
+                </>
+            }
+            {
+                !englishActive &&
+                <>
+                <h2>À propos de nous</h2>
+                <p>Avec plus de 20 ans d'expérience dans la rénovation et le remodelage de maisons, principalement dans la région de Montréal, nous apportons un savoir-faire et une expertise inégalés à chaque projet. Des petites mises à jour aux rénovations à grande échelle, nous nous sommes forgé une réputation de transformation des espaces avec précision et soin.</p>
+                <p>Au fil des ans, notre travail a permis d'établir des relations durables avec nos clients à travers Montréal, dont beaucoup nous ont fait confiance pour plusieurs projets ou nous ont recommandés à d'autres. Nous sommes fiers de livrer des résultats qui dépassent constamment les attentes.</p>
+                <button onClick={handleLangClick}>
+                    Eng
+                </button>
+                </>
+            }
             </>
             }
         </div>
